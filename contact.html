@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#050B1E] text-white">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClosedLoop Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans text-sm min-h-screen bg-cover bg-center bg-no-repeat"
+    style="background-image: url('your-background-image.jpg');">
+
+    <!-- Header -->
+    <header
+        class="w-full max-w-7xl mx-auto mt-8 pl-8 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md relative">
+        <!-- Logo -->
+        <div class="text-white font-semibold text-[20px] pl-2">
+            ClosedLoop
+        </div>
+        <!-- Navigation -->
+        <nav class="flex items-center space-x-14 text-[14.5px] font-light relative">
+            <a href="index.html" class="text-white hover:text-gray-300">Home</a>
+            <div class="relative flex items-center">
+                <a href="about.html" class="text-white hover:text-gray-300">About</a>
+            </div>
+            <a href="services.html" class="text-white hover:text-gray-300">Services</a>
+            <a href="tickets.html" class="text-white hover:text-gray-300">Tickets</a>
+        </nav>
+        <!-- Contact Us Button -->
+        <div class="relative">
+            <div
+                class="pl-7 pr-16 py-2.5 flex items-center text-[15px] font-light text-white rounded-full bg-gray-800 backdrop-blur-md hover:bg-white/20 transition relative z-10">
+                Contact us
+            </div>
+            <div
+                class="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white flex items-center justify-center z-20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-10 text-black transform -rotate-45"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-12 space-y-10">
+
+        <!-- Contact Options -->
+        <div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-6">
+            <!-- Email -->
+            <div class="flex-1 bg-[#0F162E] p-6 rounded-xl shadow-lg text-center">
+                <div class="text-3xl mb-2">📧</div>
+                <h3 class="font-semibold text-lg mb-1">Email us</h3>
+                <p class="text-sm text-gray-300">Get in touch via email for general inquiries</p>
+                <p class="mt-2 text-blue-300">Media@closedloop.in</p>
+            </div>
+
+            <!-- Call -->
+            <div class="flex-1 bg-[#0F162E] p-6 rounded-xl shadow-lg text-center">
+                <div class="text-3xl mb-2">📞</div>
+                <h3 class="font-semibold text-lg mb-1">Call us</h3>
+                <p class="text-sm text-gray-300">Reach our support team via phone</p>
+                <p class="mt-2 text-blue-300">+91 6363858202</p>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="flex-1 bg-[#0F162E] p-6 rounded-xl shadow-lg text-center">
+                <div class="text-3xl mb-2">💬</div>
+                <h3 class="font-semibold text-lg mb-1">WhatsApp</h3>
+                <p class="text-sm text-gray-300">Chat with our support team</p>
+                <p class="mt-2 text-blue-300">Using the WhatsApp option</p>
+            </div>
+        </div>
+
+        <!-- Form and Offices Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <!-- Our Offices -->
+            <div class="text-white">
+                <h2 class="text-white text-4xl font-bold mb-3">Our</h2>
+                <h3 class="text-[#d5e3ff] text-3xl font-light mb-8">Offices</h3>
+                <div class="mb-4">
+                    <h3 class=" text-gray-400 text-2xl">Bengaluru</h3>
+                    <p class="text-gray-500 text-lg">Race Course Road, Bengaluru, Karnataka 560001</p>
+                    <p class="text-gray-500 text-lg">+91 6363858202</p>
+                    <p class="text-gray-500 text-lg">Media@closedloop.in</p>
+                    <p class="text-gray-500 text-lg">Mon-Fri: 8AM-6PM IST</p>
+                </div>
+                <div>
+                    <h3 class=" text-gray-400 text-2xl">Mumbai</h3>
+                    <p class="text-gray-500 text-lg">Bandra Kurla Complex, Mumbai, Maharashtra 400051</p>
+                    <p class="text-gray-500 text-lg">+91 6363858202</p>
+                    <p class="text-gray-500 text-lg">Media@closedloop.in</p>
+                    <p class="text-gray-500 text-lg">Mon-Fri: 8AM-6PM IST</p>
+                </div>
+            </div>
+
+            <!-- Message Form -->
+            <div class="bg-[#0F162E] p-8 rounded-xl shadow-lg">
+                <h2 class="text-2xl font-bold mb-6 text-white">Send us a Message</h2>
+                <form class="space-y-4 text-white">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex flex-col">
+                            <label class="mb-1">Name*</label>
+                            <input type="text" placeholder="Enter your name" class="bg-[#050B1E] bg-opacity-80 text-white p-3 rounded border border-gray-600 shadow-sm
+                 hover:border-blue-500 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="mb-1">Email*</label>
+                            <input type="email" placeholder="Enter your email" class="bg-[#050B1E] bg-opacity-80 text-white p-3 rounded border border-gray-600 shadow-sm
+                 hover:border-blue-500 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex flex-col">
+                            <label class="mb-1">Company</label>
+                            <input type="text" placeholder="Enter your company name" class="bg-[#050B1E] bg-opacity-80 text-white p-3 rounded border border-gray-600 shadow-sm
+                 hover:border-blue-500 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="mb-1">Service Interest*</label>
+                            <input type="text" placeholder="What are you interested in?" class="bg-[#050B1E] bg-opacity-80 text-white p-3 rounded border border-gray-600 shadow-sm
+                 hover:border-blue-500 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label class="mb-1">Message*</label>
+                        <textarea placeholder="Type your message here..." rows="4" class="w-full bg-[#050B1E] bg-opacity-80 text-white p-3 rounded border border-gray-600 shadow-sm
+               hover:border-blue-500 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <button type="submit"
+                            class="bg-indigo-950 hover:bg-indigo-800 text-white px-6 py-3 rounded flex items-center space-x-2 justify-center">
+                            <span>📨</span>
+                            <span>Send Message</span>
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bg-[#0B1224] text-gray-400 py-10 mt-10 border-t border-gray-700">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-white text-lg font-bold mb-2">ClosedLoop</h3>
+                <p class="text-sm mb-2">Transforming the entertainment industry through innovative artist management and
+                    cutting-edge event production.</p>
+                <p>Media@closedloop.in</p>
+                <p>+91 6363858202</p>
+                <p>Bangalore, India</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2 ">Company</h4>
+                <ul class="space-y-1">
+                    <li><a href="#" class="hover:text-white">About us</a></li>
+                    <li><a href="#" class="hover:text-white">Our Team</a></li>
+                    <li><a href="#" class="hover:text-white">Careers</a></li>
+                    <li><a href="#" class="hover:text-white">Press</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2">Services</h4>
+                <ul class="space-y-1">
+                    <li><a href="#" class="hover:text-white">Artist Management</a></li>
+                    <li><a href="#" class="hover:text-white">Event Services</a></li>
+                    <li><a href="#" class="hover:text-white">Talent Booking</a></li>
+                    <li><a href="#" class="hover:text-white">Brand Partnerships</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2">Support</h4>
+                <ul class="space-y-1">
+                    <li><a href="#" class="hover:text-white">Help Centre</a></li>
+                    <li><a href="#" class="hover:text-white">Contact us</a></li>
+                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-sm mt-6 border-t border-gray-700 pt-4">
+            © 2025 ClosedLoop. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
