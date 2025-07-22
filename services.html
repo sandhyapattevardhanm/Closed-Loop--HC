@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClosedLoop Contact</title>
+    <title>ClosedLoop Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -13,29 +13,30 @@
 
     <!-- Header -->
     <header
-        class="w-full max-w-7xl mx-auto mt-8 pl-8 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md relative">
+        class="w-full max-w-7xl mx-auto mt-12 pl-12 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md relative">
         <!-- Logo -->
-        <div class="text-white font-semibold text-[20px] pl-2">
+        <div class="text-white font-semibold text-[30px] pl-3">
             ClosedLoop
         </div>
         <!-- Navigation -->
-        <nav class="flex items-center space-x-14 text-[14.5px] font-light relative">
+        <nav class="flex items-center space-x-20 text-[22px] font-light relative">
             <a href="index.html" class="text-white hover:text-gray-300">Home</a>
+            <a href="about.html" class="text-white hover:text-gray-300">About</a>
             <div class="relative flex items-center">
-                <a href="about.html" class="text-white hover:text-gray-300">About</a>
+                <a href="services.html" class="text-white hover:text-gray-300">Services</a>
+                <span class="absolute bottom-[-12px] left-0 w-full h-[3px] bg-white rounded-full"></span>
             </div>
-            <a href="services.html" class="text-white hover:text-gray-300">Services</a>
-            <a href="tickets.html" class="text-white hover:text-gray-300">Tickets</a>
+            <a href="#" class="text-white hover:text-gray-300">Tickets</a>
         </nav>
         <!-- Contact Us Button -->
         <div class="relative">
             <div
-                class="pl-7 pr-16 py-2.5 flex items-center text-[15px] font-light text-white rounded-full bg-gray-800 backdrop-blur-md hover:bg-white/20 transition relative z-10">
-                Contact us
+                class="pl-10 pr-24 py-3.5 flex items-center text-[22px] font-light text-white rounded-full bg-gray-900 backdrop-blur-md hover:bg-white/20 transition relative z-10">
+                <a href="contact.html"> Contact us</a>
             </div>
             <div
-                class="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white flex items-center justify-center z-20">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-10 text-black transform -rotate-45"
+                class="absolute right-1 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white flex items-center justify-center z-20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-12 text-black transform -rotate-45"
                     viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -59,31 +60,85 @@
 
         <!-- Infinity Image -->
         <div class="max-w-xl w-full">
-            <img src="" alt="Infinity" class="w-full opacity-90" />
+            <img src="assets\images\wow.png" alt="Infinity" class="w-full opacity-90" />
         </div>
     </section>
 
     <!-- Why choose us Section -->
-    <div class="flex flex-wrap gap-4 bg-[#050B1E] p-6">
-        <div class="custom-tag">Proven track record</div>
-        <div class="custom-tag">Industry expertise</div>
-        <div class="custom-tag">Personalized approach</div>
-        <div class="custom-tag">End-to-end support</div>
-    </div>
-
+    <section
+        class="why-choose-us max-w-7xl mx-auto px-8 mt-40 flex flex-col lg:flex-row items-center justify-between gap-16">
+        <h2 class="text-[#d5e3ff] text-4xl font-light mb-8"> Why Choose Us?</h2>
+        <div class="rectangle">
+            <div class="option">Proven track record</div>
+            <div class="option">Industry expertise</div>
+            <div class="option">Personalized approach</div>
+            <div class="option">End-to-end support</div>
+        </div>
+    </section>
     <style>
-        .custom-tag {
-            @apply text-white px-6 py-2 border border-gray-400 text-sm;
-            clip-path: polygon(10px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 10px);
-            background-color: transparent;
-            transition: all 0.3s ease;
+        .why-choose-us {
+            text-align: left;
+            color: white;
+            font-family: sans-serif;
+            padding: 2rem;
+            font-size: large;
         }
 
-        .custom-tag:hover {
-            @apply border-white shadow-md;
+        .options-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .option-box {
+            background-image: url('assets\images\Rectangle549.png');
+            /* 🔁 Replace with actual image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 200px;
+            /* Adjust based on image size */
+            height: 60px;
+            /* Adjust based on image height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            padding: 0 10px;
         }
     </style>
 
+    <!--Services section-->
+    <section class="image-stack-section">
+        <img src="assets\images\artist management.png" alt="Image 1">
+        <img src="assets\images\talent booking.png" alt="Image 2">
+        <img src="assets\images\event production.png" alt="Image 3">
+        <img src="assets\images\brand promotions.png" alt="Image 4">
+        <img src="assets\images\media and pr.png" alt="Image 5">
+    </section>
+    <style>
+        .image-stack-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3.5rem;
+            /* space between images */
+            padding: 5rem;
+           
+        }
+
+        .image-stack-section img {
+            max-width: 70%;
+            height: auto;
+            border-radius: 8px;
+            /* optional rounded corners */
+        }
+    </style>
 
 </body>
 
