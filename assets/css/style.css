@@ -1,0 +1,25 @@
+.trapezoid {
+    width: 320px;
+    height: 220px;
+    background-color: #d9d9d9;
+    float: right;
+    margin-top: -40px;
+
+    clip-path: polygon(30% 0%,
+            /* Top-left */
+            100% 0%,
+            /* Top-right */
+            100% 60%,
+            /* Bottom-right */
+            0% 60%
+            /* Bottom-left */
+        );
+
+    shape-outside: polygon(30% 0%,
+            100% 0%,
+            100% 60%,
+            0% 60%);
+
+    border-top-left-radius: 999px;
+    border-bottom-left-radius: 999px;
+}
