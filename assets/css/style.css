@@ -23,3 +23,16 @@
     border-top-left-radius: 999px;
     border-bottom-left-radius: 999px;
 }
+
+.shape-image {
+    shape-outside: url('/path/to/your-exported-shape.png');
+    shape-margin: 1rem;
+    float: right;
+    width: 320px;
+    height: auto;
+    -webkit-shape-outside: url('/path/to/your-exported-shape.png');
+}
+
+.font-montserrat-alt {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
