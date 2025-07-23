@@ -35,8 +35,8 @@
                 <a href="contact.html"> Contact us</a>
             </div>
             <div
-                class="absolute right-1 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white flex items-center justify-center z-20">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-12 text-black transform -rotate-45"
+                class="absolute right-1 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white flex items-center justify-center z-20">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-black transform -rotate-45"
                     viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -45,15 +45,16 @@
     </header>
 
     <!-- Offer Section -->
-    <section class="max-w-7xl mx-auto px-8 mt-40 flex flex-col lg:flex-row items-center justify-between gap-16">
+    <section class="max-w-7xl mx-auto px-8 mt-40 mb-10 flex flex-col lg:flex-row items-center justify-between gap-16">
         <div class="max-w-2xl">
-            <h2 class="text-white text-5xl font-bold mb-3">What</h2>
-            <h3 class="text-[#d5e3ff] text-4xl font-light mb-8">We Offer</h3>
-            <p class="text-[#aeb3c6] text-base leading-relaxed mb-5">
+            <h2 class="text-[#d5e3ff] text-7xl font-bold mb-3">What</h2>
+            <h3 class="text-[#aeb3c6] text-5xl font-light mb-8">We Offer</h3>
+            <p class="text-white text-2xl leading-relaxed mb-5">
                 At Closed Loop, we provide a fully integrated suite of services designed to support artists, brands, and
                 event organisers at every stage of their journey.</p>
 
-            <p class="text-[#aeb3c6] text-base leading-relaxed">Whether you're a rising talent or an established name,
+            <p class="text-white text-2xl leading-relaxed mb-5">Whether you're a rising talent or an established
+                name,
                 we create a continuous loop of creative growth, visibility, and opportunity.
             </p>
         </div>
@@ -65,53 +66,56 @@
     </section>
 
     <!-- Why choose us Section -->
-    <section
-        class="why-choose-us max-w-7xl mx-auto px-8 mt-40 flex flex-col lg:flex-row items-center justify-between gap-16">
-        <h2 class="text-[#d5e3ff] text-4xl font-light mb-8"> Why Choose Us?</h2>
-        <div class="rectangle">
-            <div class="option">Proven track record</div>
-            <div class="option">Industry expertise</div>
-            <div class="option">Personalized approach</div>
-            <div class="option">End-to-end support</div>
+    <section class="why-choose-us">
+        <h2 class="section-heading text-5xl mb-10">Why Choose Us?</h2>
+        <div class="box-container">
+            <div class="text-box">Proven track record</div>
+            <div class="text-box">Industry expertise</div>
+            <div class="text-box">Personalized approach</div>
+            <div class="text-box">End-to-end support</div>
         </div>
     </section>
+
+
     <style>
         .why-choose-us {
-            text-align: left;
             color: white;
+            text-align: center;
+            padding: 1rem;
             font-family: sans-serif;
-            padding: 2rem;
-            font-size: large;
+            width:100%;
         }
 
-        .options-row {
+        .box-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 4.5rem;
+
         }
 
-        .option-box {
-            background-image: url('assets\images\Rectangle549.png');
-            /* 🔁 Replace with actual image path */
+        .text-box {
+            width: 300px;
+            /* Match the PNG box's width */
+            height: 75px;
+            /* Match the PNG box's height */
+            background-image: url('assets/images/Rectangle549.png');
+            /* Replace with your PNG filename */
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            width: 200px;
-            /* Adjust based on image size */
-            height: 60px;
-            /* Adjust based on image height */
             display: flex;
             align-items: center;
             justify-content: center;
+
             color: white;
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 1.5rem;
             text-align: center;
             padding: 0 10px;
         }
     </style>
+
+
 
     <!--Services section-->
     <section class="image-stack-section">
@@ -129,13 +133,13 @@
             gap: 3.5rem;
             /* space between images */
             padding: 5rem;
-           
+
         }
 
         .image-stack-section img {
-            max-width: 70%;
+            width: 60%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 10px;
             /* optional rounded corners */
         }
     </style>
