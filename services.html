@@ -8,9 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="font-sans text-sm min-h-screen bg-cover bg-center bg-no-repeat"
-    style="background-image: url('your-background-image.jpg');">
-
+<body class="font-sans bg-[#020916] min-h-screen w-screen overflow-x-hidden m-0 p-0">
     <!-- Header -->
     <header
         class="w-full max-w-7xl mx-auto mt-12 pl-12 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md relative">
@@ -45,29 +43,38 @@
     </header>
 
     <!-- Offer Section -->
-    <section class="max-w-7xl mx-auto px-8 mt-40 mb-10 flex flex-col lg:flex-row items-center justify-between gap-16">
-        <div class="max-w-2xl">
-            <h2 class="text-[#d5e3ff] text-7xl font-bold mb-3">What</h2>
-            <h3 class="text-[#aeb3c6] text-5xl font-light mb-8">We Offer</h3>
-            <p class="text-white text-2xl leading-relaxed mb-5">
-                At Closed Loop, we provide a fully integrated suite of services designed to support artists, brands, and
-                event organisers at every stage of their journey.</p>
+    <section class="w-screen mt-40 mb-10 flex flex-col lg:flex-row items-stretch px-40 gap-20">
+        <!-- Left Side: Background Image with Text -->
+        <div class="relative w-full lg:w-1/2 h-full">
+            <!-- Background Image -->
+            <img src="assets/images/Group.png" alt="Decorative Image"
+                class="absolute inset-0 w-[800px] h-auto object-cover z-0" />
 
-            <p class="text-white text-2xl leading-relaxed mb-5">Whether you're a rising talent or an established
-                name,
-                we create a continuous loop of creative growth, visibility, and opportunity.
-            </p>
+            <!-- Text Content Layered on Top -->
+            <div class="relative z-10 flex flex-col justify-center h-full px-6 py-8 backdrop-brightness-100">
+                <h2 class="text-[#d5e3ff] text-7xl font-bold mb-3">What</h2>
+                <h3 class="text-[#aeb3c6] text-6xl font-light mb-8">We Offer</h3>
+                <p class="text-white text-4xl leading-relaxed mb-5">
+                    At Closed Loop, we provide a fully integrated suite of services designed to support artists, brands,
+                    and event organisers at every stage of their journey.
+                </p>
+                <p class="text-white text-4xl leading-relaxed mb-5">
+                    Whether you're a rising talent or an established name, we create a continuous loop of creative
+                    growth, visibility, and opportunity.
+                </p>
+            </div>
         </div>
 
-        <!-- Infinity Image -->
-        <div class="max-w-xl w-full">
-            <img src="assets\images\wow.png" alt="Infinity" class="w-full opacity-90" />
+        <!-- Right Side: Infinity Image (No background) -->
+        <div class="w-full lg:w-1/2 flex items-center justify-center p-8">
+            <img src="assets/images/wow.png" alt="Infinity" class="w-full max-w-md opacity-90" />
         </div>
     </section>
 
+
     <!-- Why choose us Section -->
     <section class="why-choose-us">
-        <h2 class="section-heading text-5xl mb-10">Why Choose Us?</h2>
+        <h2 class="section-heading text-6xl mb-10">Why Choose Us?</h2>
         <div class="box-container">
             <div class="text-box">Proven track record</div>
             <div class="text-box">Industry expertise</div>
@@ -83,7 +90,7 @@
             text-align: center;
             padding: 1rem;
             font-family: sans-serif;
-            width:100%;
+            width: 100%;
         }
 
         .box-container {
@@ -91,13 +98,13 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 4.5rem;
-
-        }
+            width: 100%;
+  }
 
         .text-box {
-            width: 300px;
+            width: 600px;
             /* Match the PNG box's width */
-            height: 75px;
+            height: 150px;
             /* Match the PNG box's height */
             background-image: url('assets/images/Rectangle549.png');
             /* Replace with your PNG filename */
@@ -109,7 +116,7 @@
             justify-content: center;
 
             color: white;
-            font-size: 1.5rem;
+            font-size: 3rem;
             text-align: center;
             padding: 0 10px;
         }

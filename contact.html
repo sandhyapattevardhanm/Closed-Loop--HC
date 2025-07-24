@@ -11,7 +11,7 @@
 </head>
 
 <body class="font-sans text-sm min-h-screen bg-cover bg-center bg-no-repeat"
-    style="background-image: url('your-background-image.jpg');">
+    style="background-image: url('assets/ser&cont/bg image.png');">
 
     <!-- Header -->
     <header
@@ -52,98 +52,151 @@
         <!-- Contact Options -->
         <div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-6">
             <!-- Email -->
-            <div class="flex-1 bg-[#0F162E] p-6 rounded-xl shadow-lg text-center">
-                <img src="assets\images\19.png" alt="Mail" class="w-48 opacity-90 mx-auto" />
-                <h3 class="font-semibold text-2xl mb-4">Email us</h3>
-                <p class="text-lg text-gray-300">Get in touch via email for general inquiries</p>
-                <p class="mt-2 text-lg text-blue-300">Media@closedloop.in</p>
-                <p class="text-lg text-gray-300">We'll respond within 24 hours</p>
+            <a href="mailto:Media@closedloop.in" class="block">
+                <div
+                    class="group flex-1 bg-[#0F162E] p-6 rounded-xl shadow-lg text-center cursor-pointer transition duration-200">
+                    <img src="assets/images/19.png" alt="Mail"
+                        class="w-48 opacity-90 mx-auto transition duration-300 group-hover:brightness-125 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]" />
+                    <h3 class="font-semibold text-2xl mb-4">Email us</h3>
+                    <p class="text-lg text-gray-300">Get in touch via email for general inquiries</p>
+                    <p class="mt-2 text-lg text-blue-300">Media@closedloop.in</p>
+                    <p class="text-lg text-gray-300">We'll respond within 24 hours</p>
+                </div>
+            </a>
 
-            </div>
+            <!-- Phone -->
+            <a href="tel:+916363858202" class="block mt-6">
+                <div
+                    class="group flex-1 bg-[#0F162E] p-6 rounded-xl shadow-lg text-center cursor-pointer transition duration-200">
+                    <img src="assets/images/20.png" alt="Phone"
+                        class="w-48 opacity-90 mx-auto transition duration-300 group-hover:brightness-125 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]" />
+                    <h3 class="font-semibold text-2xl mb-4">Call us</h3>
+                    <p class="text-lg text-gray-300">Reach our support team via phone</p>
+                    <p class="mt-2 text-lg text-blue-300">+91 6363858202</p>
+                    <p class="text-lg text-gray-300">Available Mon–Fri, 9AM–6PM IST</p>
+                </div>
+            </a>
 
-            <!-- Call -->
-            <div class="flex-1 bg-[#0F162E] p-6 rounded-xl shadow-lg text-center">
-                <img src="assets\images\20.png" alt="Phone" class="w-48 opacity-90 mx-auto" />
-                <h3 class="font-semibold text-2xl mb-4">Call us</h3>
-                <p class="text-lg text-gray-300">Reach our support team via phone</p>
-                <p class="mt-2 text-lg text-blue-300">+91 6363858202</p>
-                <p class="text-lg text-gray-300">Available Mon-Fri, 9AM-6PM IST</p>
-
-            </div>
-
-            <!-- WhatsApp -->
-            <div class="flex-1 bg-[#0F162E] p-6 rounded-xl shadow-lg text-center">
-                <img src="assets\images\21.png" alt="Message" class="w-48 opacity-90 mx-auto" />
-                <h3 class="font-semibold text-2xl mb-4">WhatsApp</h3>
-                <p class="text-lg text-gray-300">Chat with our support team</p>
-                <p class="mt-2 text-lg text-blue-300">Using the WhatsApp option</p>
-                <p class="text-lg text-gray-300">Average response time: 2 minutes</p>
-
-            </div>
+            <!-- Whatsapp -->
+            <a href="https://wa.me/916363858202" target="_blank" class="block mt-6">
+                <div
+                    class="group flex-1 bg-[#0F162E] p-6 rounded-xl shadow-lg text-center cursor-pointer transition duration-200">
+                    <img src="assets/images/21.png" alt="WhatsApp"
+                        class="w-48 opacity-90 mx-auto transition duration-300 group-hover:brightness-125 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]" />
+                    <h3 class="font-semibold text-2xl mb-4">WhatsApp</h3>
+                    <p class="text-lg text-gray-300">Chat with our support team</p>
+                    <p class="mt-2 text-lg text-blue-300">Using the WhatsApp option</p>
+                    <p class="text-lg text-gray-300">Average response time: 2 minutes</p>
+                </div>
+            </a>
         </div>
 
         <!-- Form and Offices Section -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <!-- Our Offices -->
             <div class="text-white">
+
                 <h2 class="text-white text-4xl font-bold mb-3">Our</h2>
                 <h3 class="text-[#d5e3ff] text-3xl font-light mb-8">Offices</h3>
-                <div class="mb-4">
-                    <h3 class=" text-gray-400 text-2xl">Bengaluru</h3>
-                    <p class="text-gray-500 text-lg">Race Course Road, Bengaluru, Karnataka 560001</p>
-                    <p class="text-gray-500 text-lg">+91 6363858202</p>
-                    <p class="text-gray-500 text-lg">Media@closedloop.in</p>
-                    <p class="text-gray-500 text-lg">Mon-Fri: 8AM-6PM IST</p>
+                <div class="mb-10">
+                    <a href="https://www.google.com/maps?q=Bandra+Kurla+Complex,+Mumbai,+Maharashtra+400051"
+                        target="_blank"
+                        class="flex items-center text-gray-400 text-2xl hover:text-slate-600 transition duration-200 mb-2">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <h3>Bengaluru</h3>
+                    </a>
+                    <p class="text-gray-100 text-lg">Race Course Road, Bengaluru, Karnataka 560001</p>
+                    <p class="text-gray-100 text-lg">+91 6363858202</p>
+                    <p class="text-gray-100 text-lg">Media@closedloop.in</p>
+                    <p class="text-gray-100 text-lg">Mon-Fri: 8AM-6PM IST</p>
                 </div>
+
                 <div>
-                    <h3 class=" text-gray-400 text-2xl">Mumbai</h3>
-                    <p class="text-gray-500 text-lg">Bandra Kurla Complex, Mumbai, Maharashtra 400051</p>
-                    <p class="text-gray-500 text-lg">+91 6363858202</p>
-                    <p class="text-gray-500 text-lg">Media@closedloop.in</p>
-                    <p class="text-gray-500 text-lg">Mon-Fri: 8AM-6PM IST</p>
+                    <a href="https://www.google.com/maps?q=Bandra+Kurla+Complex,+Mumbai,+Maharashtra+400051"
+                        target="_blank"
+                        class="flex items-center text-gray-400 text-2xl hover:text-slate-600 transition duration-200 mb-2">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <h3>Mumbai</h3>
+                    </a>
+                    <p class="text-gray-100 text-lg">Bandra Kurla Complex, Mumbai, Maharashtra 400051</p>
+                    <p class="text-gray-100 text-lg">+91 6363858202</p>
+                    <p class="text-gray-100 text-lg">Media@closedloop.in</p>
+                    <p class="text-gray-100 text-lg">Mon–Fri: 8AM–6PM IST</p>
                 </div>
+
             </div>
 
             <!-- Message Form -->
-            <div class="bg-[#0F162E] p-8 rounded-2xl shadow-lg">
-                <h2 class="text-2xl font-bold mb-6 text-white">Send us a Message</h2>
+            <div class="bg-slate-950 p-8 rounded-2xl bg-opacity-10 border border-slate-700 border-2 shadow-lg">
+                <h2 class="text-2xl font-semibold text-white">Send us</h2>
+                <h3 class="text-2xl mb-6 font-light text-gray-300">a Message</h3>
+
                 <form class="space-y-4 text-white text-lg">
 
+                    <!-- Name & Email -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="flex flex-col">
-                            <label class="mb-1">Name*</label>
-                            <input type="text" placeholder="Enter your name" class="bg-[#050B1E] bg-opacity-80 text-white p-3 rounded-2xl border border-gray-400 shadow-sm
-                 hover:border-indigo-700 hover:shadow-md focus:outline-none focus:ring-1 focus:ring-indigo-700" />
+                            <label class="mb-1 text-white">Name*</label>
+                            <div
+                                class="bg-gradient-to-br from-black/70 to-gray-500/60 p-[2px] rounded-2xl shadow-[0_0_12px_rgba(0,0,0,0.3)]">
+                                <div class="bg-[#050B1E]/40 rounded-2xl">
+                                    <input type="text" placeholder=""
+                                        class="w-full bg-transparent text-white p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-white/20 border-none" />
+                                </div>
+                            </div>
                         </div>
                         <div class="flex flex-col">
-                            <label class="mb-1">Email*</label>
-                            <input type="email" placeholder="Enter your email" class="bg-[#050B1E] bg-opacity-80 text-white p-3 rounded-2xl border border-gray-400 shadow-sm
-                 hover:border-indigo-700 hover:shadow-md focus:outline-none focus:ring-1 focus:ring-indigo-700" />
+                            <label class="mb-1 text-white">Email*</label>
+                            <div
+                                class="bg-gradient-to-br from-black/70 to-gray-500/60 p-[2px] rounded-2xl shadow-[0_0_12px_rgba(0,0,0,0.3)]">
+                                <div class="bg-[#050B1E]/40 rounded-2xl">
+                                    <input type="email" placeholder=""
+                                        class="w-full bg-transparent text-white p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-white/20 border-none" />
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Company & Service Interest -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                         <div class="flex flex-col">
-                            <label class="mb-1">Company</label>
-                            <input type="text" placeholder="Enter your company name" class="bg-[#050B1E] bg-opacity-80 text-white p-3 rounded-2xl border border-gray-400 shadow-sm
-                 hover:border-indigo-700 hover:shadow-md focus:outline-none focus:ring-1 focus:ring-indigo-700" />
+                            <label class="mb-1 text-white">Company</label>
+                            <div
+                                class="bg-gradient-to-br from-black/70 to-gray-500/60 p-[2px] rounded-2xl shadow-[0_0_12px_rgba(0,0,0,0.3)]">
+                                <div class="bg-[#050B1E]/40 rounded-2xl">
+                                    <input type="text" placeholder=""
+                                        class="w-full bg-transparent text-white p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-white/20 border-none" />
+                                </div>
+                            </div>
                         </div>
                         <div class="flex flex-col">
-                            <label class="mb-1">Service Interest*</label>
-                            <input type="text" placeholder="What are you interested in?" class="bg-[#050B1E] bg-opacity-80 text-white p-3 rounded-2xl border border-gray-400 shadow-sm
-                 hover:border-indigo-700 hover:shadow-md focus:outline-none focus:ring-1 focus:ring-indigo-700" />
+                            <label class="mb-1 text-white">Service Interest*</label>
+                            <div
+                                class="bg-gradient-to-br from-black/70 to-gray-500/60 p-[2px] rounded-2xl shadow-[0_0_12px_rgba(0,0,0,0.3)]">
+                                <div class="bg-[#050B1E]/40 rounded-2xl">
+                                    <input type="text" placeholder=""
+                                        class="w-full bg-transparent text-white p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-white/20 border-none" />
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="flex flex-col">
-                        <label class="mb-1">Message*</label>
-                        <textarea placeholder="Type your message here..." rows="4" class="w-full bg-[#050B1E] bg-opacity-80 text-white p-3 rounded-2xl border border-gray-400 shadow-sm
-                        hover:border-indigo-700 hover:shadow-md focus:outline-none focus:ring-1 focus:ring-indigo-700"></textarea>
+                    <!-- Message -->
+                    <div class="flex flex-col mt-4">
+                        <label class="mb-1 text-white">Message*</label>
+                        <div
+                            class="bg-gradient-to-br from-black/70 to-gray-500/60 p-[2px] rounded-2xl shadow-[0_0_12px_rgba(0,0,0,0.3)]">
+                            <div class="bg-[#050B1E]/40 rounded-2xl">
+                                <textarea rows="4" placeholder=""
+                                    class="w-full bg-transparent text-white p-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-white/20 border-none"></textarea>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="flex justify-center">
+                    <!-- Button -->
+                    <div class="flex justify-center mt-6">
                         <button type="submit"
-                            class="bg-indigo-950 hover:bg-indigo-800 text-white px-6 py-3 rounded-2xl flex items-center space-x-2 justify-center">
+                            class="bg-slate-950 hover:bg-slate-800 text-white px-6 py-3 rounded-2xl flex items-center space-x-2 justify-center">
                             <i class="fas fa-paper-plane text-white"></i>
                             <span>Send Message</span>
                         </button>
@@ -151,9 +204,7 @@
 
                 </form>
             </div>
-
         </div>
-
     </main>
 
 
