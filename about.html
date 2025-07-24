@@ -7,6 +7,7 @@
     <title>About | Closed Loop</title>
     <link rel="stylesheet" href="assets\css\style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -24,43 +25,69 @@
 
 <body class="text-white text-[17px]">
     <!-- Background ring image -->
-    <div id="ring-bg" class="absolute top-[-90px] left-[-40px] z-[-10] w-[500px] h-[400px] pointer-events-none">
+    <div id="ring-bg" class="absolute top-[-60px] left-[-20px] sm:top-[-90px] sm:left-[-40px] 
+         w-[250px] h-[200px] sm:w-[400px] sm:h-[300px] md:w-[500px] md:h-[400px]
+         z-[-10] pointer-events-none">
         <img src="assets/images/Ellipse 181.png" alt="Ring background"
             class="w-full h-full object-contain opacity-20" />
     </div>
 
     <div class="relative">
         <!-- Header -->
-        <header
-            class="relative z-10 w-full max-w-7xl mx-auto mt-12 pl-12 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md">
+        <header x-data="{ open: false }"
+            class="relative z-10 w-full max-w-7xl mx-auto mt-12 pl-6 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md">
+
             <!-- Logo -->
-            <div class="text-white font-semibold text-[30px] pl-3 font-montserrat-alt">
-                ClosedLoop
+            <div class="text-white font-semibold text-[26px] font-montserrat-alt"><img src="assets\images\logo.png"
+                    class="w-19 h-14" alt="">
+
             </div>
-            <!-- Navigation -->
-            <nav class="flex items-center space-x-20 text-[22px] font-light relative">
-                <a href="index.html" class="text-white hover:text-gray-300">Home</a>
-                <div class="relative flex items-center">
-                    <a href="about.html" class="text-white hover:text-gray-300">About</a>
-                    <span class="absolute bottom-[-12px] left-0 w-full h-[3px] bg-white rounded-full"></span>
+
+            <!-- Desktop Nav + Contact -->
+            <div class="hidden md:flex items-center space-x-16">
+                <nav class="flex items-center space-x-12 text-[20px] font-light relative">
+                    <a href="index.html" class="text-white hover:text-gray-300">Home</a>
+                    <div class="relative flex items-center">
+                        <a href="about.html" class="text-white hover:text-gray-300">About</a>
+                        <span class="absolute bottom-[-10px] left-0 w-full h-[2px] bg-white rounded-full"></span>
+                    </div>
+                    <a href="services.html" class="text-white hover:text-gray-300">Services</a>
+                    <a href="#" class="text-white hover:text-gray-300">Tickets</a>
+                </nav>
+                <!-- Contact Us -->
+                <div class="relative">
+                    <div
+                        class="pl-8 pr-20 py-3.5 flex items-center text-[20px] font-light text-white rounded-full bg-gray-900 backdrop-blur-md hover:bg-white/20 transition relative z-10">
+                        <a href="contact.html">Contact us</a>
+                    </div>
+                    <div
+                        class="absolute right-1 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white flex items-center justify-center z-20">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-black transform -rotate-45"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
                 </div>
-                <a href="services.html" class="text-white hover:text-gray-300">Services</a>
-                <a href="#" class="text-white hover:text-gray-300">Tickets</a>
-            </nav>
-            <!-- Contact Us Button -->
-            <div class="relative">
-                <div
-                    class="pl-10 pr-24 py-3.5 flex items-center text-[22px] font-light text-white rounded-full bg-gray-900 backdrop-blur-md hover:bg-white/20 transition relative z-10">
-                    <a href="contact.html"> Contact us</a>
-                </div>
-                <div
-                    class="absolute right-1 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white flex items-center justify-center z-20">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-12 text-black transform -rotate-45"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </div>
+            </div>
+
+            <!-- Hamburger Icon (Mobile Only) -->
+            <button @click="open = !open" x-show="!open" class="md:hidden z-50 relative pr-6">
+                <!-- Your hamburger icon here -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Mobile Nav Panel -->
+            <div x-show="open" x-transition @click.outside="open = false"
+                class="absolute top-0 right-0 w-[40%] bg-[#020916] border border-blue-500 rounded-bl-3xl md:hidden px-6 py-4 space-y-4 text-white text-[18px] font-light z-50">
+                <a href="index.html" class="block hover:text-gray-300">Home</a>
+                <a href="about.html" class="block hover:text-gray-300">About</a>
+                <a href="services.html" class="block hover:text-gray-300">Services</a>
+                <a href="#" class="block hover:text-gray-300">Tickets</a>
+                <a href="contact.html" class="block hover:text-gray-300">Contact Us</a>
             </div>
         </header>
 
@@ -97,7 +124,7 @@
 
                 <!-- Floating Trapezoid Image -->
                 <div class="relative">
-                    <img src="assets/images/trapeziod.png" alt="trapezoid"
+                    <img src="assets\images\abtpage\Team.png" alt="trapezoid"
                         class="float-right w-[320px] h-auto md:ml-6 mt-[-3rem] mb-4 hidden md:block shape-image"
                         style="shape-outside: inset(0);" />
 
@@ -128,7 +155,7 @@
 
             <!-- Bottom Decorative Rectangle -->
             <img src="assets/images/Rectangle 543.png" alt="Decorative rectangle"
-                class="absolute top-[600px] left-[0px] w-[250px] h-[3050px] hidden md:block" />
+                class="absolute top-[600px] left-0 w-[250px] h-[3050px] hidden md:block -z-10" />
         </section>
 
         <!-- Our Initiative Section -->
@@ -162,6 +189,91 @@
                 </div>
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer class="text-white w-full pt-16 pb-6 font-poppins bg-[#0B0B0B] text-[17px]">
+            <div class="w-full flex flex-col md:flex-row justify-between items-start px-4 lg:px-12 xl:px-20">
+                <!-- Logo & Description -->
+                <div class="mb-10 md:mb-0 w-full pl-10 pr-14 md:w-1/3">
+                    <img src="assets/images/logo.png" alt="ClosedLoop Logo" class="w-[130px] mb-4" />
+                    <p class="leading-relaxed text-white/80 max-w-xs">
+                        Transforming the entertainment industry through innovative artist management and cutting-edge
+                        event production.
+                    </p>
+
+                    <!-- Contact Info -->
+                    <div class="mt-6 space-y-4 text-white/80">
+                        <div class="flex items-center gap-2">
+                            <img src="assets/images/icons/email icon.png" class="w-5 h-5" />
+                            <span>Media@closedloop.in</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <img src="assets/images/icons/phone icon.png" class="w-5 h-5" />
+                            <span>+91 9663358202</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <img src="assets/images/icons/maps icon.png" class="w-5 h-5" />
+                            <span>Bengaluru, India</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div
+                    class="grid grid-cols-1 pt-15 md:grid-cols-3 gap-12 w-full md:w-2/3 items-start pl-6 md:pl-16 mt-14 pt-12 md:mt-12">
+                    <!-- Company -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Company</h3>
+                        <ul class="space-y-2 text-white/80">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Services -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Services</h3>
+                        <ul class="space-y-2 text-white/80">
+                            <li><a href="#">Artist Management</a></li>
+                            <li><a href="#">Event Production</a></li>
+                            <li><a href="#">Talent Booking</a></li>
+                            <li><a href="#">Brand Partnerships</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Support</h3>
+                        <ul class="space-y-2 text-white/80">
+                            <li><a href="#">Help Centre</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div
+                class="w-full mt-12 border-t border-[#4DA5F5] pt-6 px-4 lg:px-12 xl:px-20 flex flex-col md:flex-row justify-between items-center text-white/50 gap-3 md:gap-4 text-[16px] sm:text-[17px] leading-snug text-center md:text-left break-words">
+                <p
+                    class="w-full md:w-auto whitespace-normal break-words leading-snug text-center md:text-left ml-0 md:ml-2">
+                    &copy; 2025 ClosedLoop. All rights reserved.
+                </p>
+                <div class="flex gap-4 justify-center md:justify-end w-full md:w-auto">
+                    <a href="#"><img src="assets/images/icons/Instagram.png" class="w-4 h-4" alt="Instagram" /></a>
+                    <a href="#"><img src="assets/images/icons/Facebook F.png" class="w-4 h-4" alt="Facebook" /></a>
+                    <a href="#"><img src="assets/images/icons/X.png" class="w-4 h-4" alt="Twitter" /></a>
+                    <a href="#"><img src="assets/images/icons/LinkedIn 2.png" class="w-4 h-4" alt="LinkedIn" /></a>
+                    <a href="#"><img src="assets/images/icons/YouTube.png" class="w-4 h-4" alt="YouTube" /></a>
+                </div>
+            </div>
+        </footer>
+
+
 
     </div>
 
