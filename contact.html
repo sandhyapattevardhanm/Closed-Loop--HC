@@ -14,79 +14,104 @@
     style="background-image: url('assets/ser&cont/bg image.png');">
 
     <!-- Header -->
-    <header
-        class="w-full max-w-7xl mx-auto mt-12 pl-12 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md relative">
-        <!-- Logo -->
-        <div class="text-white font-semibold text-[30px] pl-3">
-            ClosedLoop
-        </div>
-        <!-- Navigation -->
-        <nav class="flex items-center space-x-20 text-[22px] font-light relative">
-            <a href="index.html" class="text-white hover:text-gray-300">Home</a>
-            <div class="relative flex items-center">
-                <a href="about.html" class="text-white hover:text-gray-300">About</a>
-            </div>
-            <a href="services.html" class="text-white hover:text-gray-300">Services</a>
-            <a href="#" class="text-white hover:text-gray-300">Tickets</a>
-        </nav>
-        <!-- Contact Us Button -->
-        <div class="relative">
-            <div
-                class="pl-10 pr-24 py-3.5 flex items-center text-[22px] font-light text-white rounded-full bg-gray-900 backdrop-blur-md hover:bg-white/20 transition relative z-10">
-                <a href="contact.html"> Contact us</a>
+    <header x-data="{ open: false }"
+        class="relative z-10 w-full max-w-7xl mx-auto mt-12 pl-6 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md">
 
+        <!-- Logo -->
+        <div class="text-white font-semibold text-[26px] font-montserrat-alt"><img src="assets\images\logo.png"
+                class="w-19 h-14" alt="">
+
+        </div>
+
+        <!-- Desktop Nav + Contact -->
+        <div class="hidden md:flex items-center space-x-16">
+            <nav class="flex items-center space-x-12 text-[20px] font-light relative">
+                <a href="index.html" class="text-white hover:text-gray-300">Home</a>
+                <div class="relative flex items-center">
+                    <a href="about.html" class="text-white hover:text-gray-300">About</a>
+                </div>
+                <a href="services.html" class="text-white hover:text-gray-300">Services</a>
+                <a href="#" class="text-white hover:text-gray-300">Tickets</a>
+            </nav>
+            <!-- Contact Us -->
+            <div class="relative">
+                <div
+                    class="pl-8 pr-20 py-3.5 flex items-center text-[20px] font-light text-white rounded-full bg-gray-900 backdrop-blur-md hover:bg-white/20 transition relative z-10">
+                    <a href="contact.html">Contact us</a>
+                </div>
+                <div
+                    class="absolute right-1 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white flex items-center justify-center z-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-black transform -rotate-45"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
             </div>
-            <div
-                class="absolute right-1 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white flex items-center justify-center z-20">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-12 text-black transform -rotate-45"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-            </div>
+        </div>
+
+        <!-- Hamburger Icon (Mobile Only) -->
+        <button @click="open = !open" x-show="!open" class="md:hidden z-50 relative pr-6">
+            <!-- Your hamburger icon here -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        <!-- Mobile Nav Panel -->
+        <div x-show="open" x-transition @click.outside="open = false"
+            class="absolute top-0 right-0 w-[40%] bg-[#020916] border border-blue-500 rounded-bl-3xl md:hidden px-6 py-4 space-y-4 text-white text-[18px] font-light z-50">
+            <a href="index.html" class="block hover:text-gray-300">Home</a>
+            <a href="about.html" class="block hover:text-gray-300">About</a>
+            <a href="services.html" class="block hover:text-gray-300">Services</a>
+            <a href="#" class="block hover:text-gray-300">Tickets</a>
+            <a href="contact.html" class="block hover:text-gray-300">Contact Us</a>
         </div>
     </header>
 
+
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-6 py-12 space-y-10">
+    <main class="max-w-7xl mx-auto px-6 py-12 space-y-10 justify-center items-center">
 
         <!-- Contact Options -->
-        <div class="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-6">
+        <div class="flex flex-col lg:flex-row flex-wrap justify-center items-center gap-6">
             <!-- Email -->
             <a href="mailto:Media@closedloop.in" class="block">
                 <div
-                    class="group flex-1 bg-[#0F162E] p-6 rounded-xl shadow-lg text-center cursor-pointer transition duration-200">
+                    class="group w-[350px] bg-[#0F162E] p-6 rounded-xl shadow-lg text-center cursor-pointer transition duration-200">
                     <img src="assets/images/19.png" alt="Mail"
                         class="w-48 opacity-90 mx-auto transition duration-300 group-hover:brightness-125 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]" />
                     <h3 class="font-semibold text-2xl mb-4">Email us</h3>
-                    <p class="text-lg text-gray-300">Get in touch via email for general inquiries</p>
-                    <p class="mt-2 text-lg text-blue-300">Media@closedloop.in</p>
-                    <p class="text-lg text-gray-300">We'll respond within 24 hours</p>
+                    <p class="text-md text-gray-300">Get in touch via email for general inquiries</p>
+                    <p class="mt-2 text-md text-blue-300">Media@closedloop.in</p>
+                    <p class="text-md text-gray-300">We'll respond within 24 hours</p>
                 </div>
             </a>
 
             <!-- Phone -->
-            <a href="tel:+916363858202" class="block mt-6">
+            <a href="tel:+916363858202" class="block">
                 <div
-                    class="group flex-1 bg-[#0F162E] p-6 rounded-xl shadow-lg text-center cursor-pointer transition duration-200">
+                    class="group w-[350px] bg-[#0F162E] p-6 rounded-xl shadow-lg text-center cursor-pointer transition duration-200">
                     <img src="assets/images/20.png" alt="Phone"
                         class="w-48 opacity-90 mx-auto transition duration-300 group-hover:brightness-125 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]" />
                     <h3 class="font-semibold text-2xl mb-4">Call us</h3>
-                    <p class="text-lg text-gray-300">Reach our support team via phone</p>
-                    <p class="mt-2 text-lg text-blue-300">+91 6363858202</p>
-                    <p class="text-lg text-gray-300">Available Mon–Fri, 9AM–6PM IST</p>
+                    <p class="text-md text-gray-300">Reach our support team via phone</p>
+                    <p class="mt-2 text-md text-blue-300">+91 6363858202</p>
+                    <p class="text-md text-gray-300">Available Mon–Fri, 9AM–6PM IST</p>
                 </div>
             </a>
 
-            <!-- Whatsapp -->
-            <a href="https://wa.me/916363858202" target="_blank" class="block mt-6">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/916363858202" target="_blank" class="block">
                 <div
-                    class="group flex-1 bg-[#0F162E] p-6 rounded-xl shadow-lg text-center cursor-pointer transition duration-200">
+                    class="group w-[350px] bg-[#0F162E] p-6 rounded-xl shadow-lg text-center cursor-pointer transition duration-200">
                     <img src="assets/images/21.png" alt="WhatsApp"
                         class="w-48 opacity-90 mx-auto transition duration-300 group-hover:brightness-125 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.6)]" />
                     <h3 class="font-semibold text-2xl mb-4">WhatsApp</h3>
-                    <p class="text-lg text-gray-300">Chat with our support team</p>
-                    <p class="mt-2 text-lg text-blue-300">Using the WhatsApp option</p>
-                    <p class="text-lg text-gray-300">Average response time: 2 minutes</p>
+                    <p class="text-md text-gray-300">Chat with our support team</p>
+                    <p class="mt-2 text-md text-blue-300">Using the WhatsApp option</p>
+                    <p class="text-md text-gray-300">Average response time: 2 minutes</p>
                 </div>
             </a>
         </div>
@@ -209,46 +234,85 @@
 
 
     <!-- Footer -->
-    <footer class="bg-[#0B1224] text-gray-400 py-10 mt-10 border-t border-gray-700">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-8">
-            <div>
-                <h3 class="text-white text-lg font-bold mb-2">ClosedLoop</h3>
-                <p class="text-sm mb-2">Transforming the entertainment industry through innovative artist management and
-                    cutting-edge event production.</p>
-                <p>Media@closedloop.in</p>
-                <p>+91 6363858202</p>
-                <p>Bangalore, India</p>
+    <footer class="text-white w-full pt-16 pb-6 font-poppins bg-[#0B0B0B] text-[17px]">
+        <div class="w-full flex flex-col md:flex-row justify-between items-start px-4 lg:px-12 xl:px-20">
+            <!-- Logo & Description -->
+            <div class="mb-10 md:mb-0 w-full pl-10 pr-14 md:w-1/3">
+                <img src="assets/images/logo.png" alt="ClosedLoop Logo" class="w-[130px] mb-4" />
+                <p class="leading-relaxed text-white/80 max-w-xs">
+                    Transforming the entertainment industry through innovative artist management and cutting-edge
+                    event production.
+                </p>
+
+                <!-- Contact Info -->
+                <div class="mt-6 space-y-4 text-white/80">
+                    <div class="flex items-center gap-2">
+                        <img src="assets/images/icons/email icon.png" class="w-5 h-5" />
+                        <span>Media@closedloop.in</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <img src="assets/images/icons/phone icon.png" class="w-5 h-5" />
+                        <span>+91 9663358202</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <img src="assets/images/icons/maps icon.png" class="w-5 h-5" />
+                        <span>Bengaluru, India</span>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h4 class="text-white font-semibold mb-2 ">Company</h4>
-                <ul class="space-y-1">
-                    <li><a href="#" class="hover:text-white">About us</a></li>
-                    <li><a href="#" class="hover:text-white">Our Team</a></li>
-                    <li><a href="#" class="hover:text-white">Careers</a></li>
-                    <li><a href="#" class="hover:text-white">Press</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-2">Services</h4>
-                <ul class="space-y-1">
-                    <li><a href="#" class="hover:text-white">Artist Management</a></li>
-                    <li><a href="#" class="hover:text-white">Event Services</a></li>
-                    <li><a href="#" class="hover:text-white">Talent Booking</a></li>
-                    <li><a href="#" class="hover:text-white">Brand Partnerships</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold mb-2">Support</h4>
-                <ul class="space-y-1">
-                    <li><a href="#" class="hover:text-white">Help Centre</a></li>
-                    <li><a href="#" class="hover:text-white">Contact us</a></li>
-                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-white">Terms of Service</a></li>
-                </ul>
+
+            <!-- Navigation Links -->
+            <div
+                class="grid grid-cols-1 pt-15 md:grid-cols-3 gap-12 w-full md:w-2/3 items-start pl-6 md:pl-16 mt-14 pt-12 md:mt-12">
+                <!-- Company -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#">Artist Management</a></li>
+                        <li><a href="#">Event Production</a></li>
+                        <li><a href="#">Talent Booking</a></li>
+                        <li><a href="#">Brand Partnerships</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#">Help Centre</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="text-center text-sm mt-6 border-t border-gray-700 pt-4">
-            © 2025 ClosedLoop. All rights reserved.
+
+        <!-- Bottom bar -->
+        <div
+            class="w-full mt-12 border-t border-[#4DA5F5] pt-6 px-4 lg:px-12 xl:px-20 flex flex-col md:flex-row justify-between items-center text-white/50 gap-3 md:gap-4 text-[16px] sm:text-[17px] leading-snug text-center md:text-left break-words">
+            <p
+                class="w-full md:w-auto whitespace-normal break-words leading-snug text-center md:text-left ml-0 md:ml-2">
+                &copy; 2025 ClosedLoop. All rights reserved.
+            </p>
+            <div class="flex gap-4 justify-center md:justify-end w-full md:w-auto">
+                <a href="#"><img src="assets/images/icons/Instagram.png" class="w-4 h-4" alt="Instagram" /></a>
+                <a href="#"><img src="assets/images/icons/Facebook F.png" class="w-4 h-4" alt="Facebook" /></a>
+                <a href="#"><img src="assets/images/icons/X.png" class="w-4 h-4" alt="Twitter" /></a>
+                <a href="#"><img src="assets/images/icons/LinkedIn 2.png" class="w-4 h-4" alt="LinkedIn" /></a>
+                <a href="#"><img src="assets/images/icons/YouTube.png" class="w-4 h-4" alt="YouTube" /></a>
+            </div>
         </div>
     </footer>
 </body>

@@ -10,37 +10,63 @@
 
 <body class="font-sans bg-[#020916] min-h-screen w-screen overflow-x-hidden m-0 p-0">
     <!-- Header -->
-    <header
-        class="w-full max-w-7xl mx-auto mt-12 pl-12 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md relative">
+    <header x-data="{ open: false }"
+        class="relative z-10 w-full max-w-7xl mx-auto mt-12 pl-6 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md">
+
         <!-- Logo -->
-        <div class="text-white font-semibold text-[30px] pl-3">
-            ClosedLoop
+        <div class="text-white font-semibold text-[26px] font-montserrat-alt"><img src="assets\images\logo.png"
+                class="w-19 h-14" alt="">
+
         </div>
-        <!-- Navigation -->
-        <nav class="flex items-center space-x-20 text-[22px] font-light relative">
-            <a href="index.html" class="text-white hover:text-gray-300">Home</a>
-            <a href="about.html" class="text-white hover:text-gray-300">About</a>
-            <div class="relative flex items-center">
-                <a href="services.html" class="text-white hover:text-gray-300">Services</a>
-                <span class="absolute bottom-[-12px] left-0 w-full h-[3px] bg-white rounded-full"></span>
+
+        <!-- Desktop Nav + Contact -->
+        <div class="hidden md:flex items-center space-x-16">
+            <nav class="flex items-center space-x-12 text-[20px] font-light relative">
+                <a href="index.html" class="text-white hover:text-gray-300">Home</a>
+                <a href="about.html" class="text-white hover:text-gray-300">About</a>
+                <div class="relative flex items-center">
+                    <a href="services.html" class="text-white hover:text-gray-300">Services</a>
+                    <span class="absolute bottom-[-10px] left-0 w-full h-[2px] bg-white rounded-full"></span>
+                </div>
+                <a href="#" class="text-white hover:text-gray-300">Tickets</a>
+            </nav>
+            <!-- Contact Us -->
+            <div class="relative">
+                <div
+                    class="pl-8 pr-20 py-3.5 flex items-center text-[20px] font-light text-white rounded-full bg-gray-900 backdrop-blur-md hover:bg-white/20 transition relative z-10">
+                    <a href="contact.html">Contact us</a>
+                </div>
+                <div
+                    class="absolute right-1 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white flex items-center justify-center z-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-black transform -rotate-45"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
             </div>
-            <a href="#" class="text-white hover:text-gray-300">Tickets</a>
-        </nav>
-        <!-- Contact Us Button -->
-        <div class="relative">
-            <div
-                class="pl-10 pr-24 py-3.5 flex items-center text-[22px] font-light text-white rounded-full bg-gray-900 backdrop-blur-md hover:bg-white/20 transition relative z-10">
-                <a href="contact.html"> Contact us</a>
-            </div>
-            <div
-                class="absolute right-1 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white flex items-center justify-center z-20">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-black transform -rotate-45"
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-            </div>
+        </div>
+
+        <!-- Hamburger Icon (Mobile Only) -->
+        <button @click="open = !open" x-show="!open" class="md:hidden z-50 relative pr-6">
+            <!-- Your hamburger icon here -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        <!-- Mobile Nav Panel -->
+        <div x-show="open" x-transition @click.outside="open = false"
+            class="absolute top-0 right-0 w-[40%] bg-[#020916] border border-blue-500 rounded-bl-3xl md:hidden px-6 py-4 space-y-4 text-white text-[18px] font-light z-50">
+            <a href="index.html" class="block hover:text-gray-300">Home</a>
+            <a href="about.html" class="block hover:text-gray-300">About</a>
+            <a href="services.html" class="block hover:text-gray-300">Services</a>
+            <a href="#" class="block hover:text-gray-300">Tickets</a>
+            <a href="contact.html" class="block hover:text-gray-300">Contact Us</a>
         </div>
     </header>
+
 
     <!-- Offer Section -->
     <section class="w-screen mt-40 mb-10 flex flex-col lg:flex-row items-stretch px-40 gap-20">
@@ -52,13 +78,13 @@
 
             <!-- Text Content Layered on Top -->
             <div class="relative z-10 flex flex-col justify-center h-full px-6 py-8 backdrop-brightness-100">
-                <h2 class="text-[#d5e3ff] text-7xl font-bold mb-3">What</h2>
-                <h3 class="text-[#aeb3c6] text-6xl font-light mb-8">We Offer</h3>
-                <p class="text-white text-4xl leading-relaxed mb-5">
+                <h2 class="text-[#d5e3ff] text-5xl font-bold mb-3">What</h2>
+                <h3 class="text-[#aeb3c6] text-3xl font-light mb-8">We Offer</h3>
+                <p class="text-white text-xl leading-relaxed mb-5">
                     At Closed Loop, we provide a fully integrated suite of services designed to support artists, brands,
                     and event organisers at every stage of their journey.
                 </p>
-                <p class="text-white text-4xl leading-relaxed mb-5">
+                <p class="text-white text-xl leading-relaxed mb-5">
                     Whether you're a rising talent or an established name, we create a continuous loop of creative
                     growth, visibility, and opportunity.
                 </p>
@@ -74,7 +100,7 @@
 
     <!-- Why choose us Section -->
     <section class="why-choose-us">
-        <h2 class="section-heading text-6xl mb-10">Why Choose Us?</h2>
+        <h2 class="section-heading text-4xl mb-10">Why Choose Us?</h2>
         <div class="box-container">
             <div class="text-box">Proven track record</div>
             <div class="text-box">Industry expertise</div>
@@ -97,17 +123,14 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 4.5rem;
+            gap: 2rem;
             width: 100%;
-  }
+        }
 
         .text-box {
-            width: 600px;
-            /* Match the PNG box's width */
-            height: 150px;
-            /* Match the PNG box's height */
+            width: 280px;
+            height: 70px;
             background-image: url('assets/images/Rectangle549.png');
-            /* Replace with your PNG filename */
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -116,7 +139,7 @@
             justify-content: center;
 
             color: white;
-            font-size: 3rem;
+            font-size: 1.5rem;
             text-align: center;
             padding: 0 10px;
         }
@@ -125,32 +148,137 @@
 
 
     <!--Services section-->
-    <section class="image-stack-section">
-        <img src="assets\images\artist management.png" alt="Image 1">
-        <img src="assets\images\talent booking.png" alt="Image 2">
-        <img src="assets\images\event production.png" alt="Image 3">
-        <img src="assets\images\brand promotions.png" alt="Image 4">
-        <img src="assets\images\media and pr.png" alt="Image 5">
+    <section class="image-stack-section flex flex-wrap gap-4 justify-center relative">
+        <!-- Image 1 -->
+        <img src="assets/images/artist management.png" alt="Image 1" />
+
+        <!-- Image 2 -->
+        <img src="assets/images/talent booking.png" alt="Image 2" />
+
+        <!-- Container for Image 3 and Image 4 with shared background circle -->
+        <div class="relative flex flex-col items-center gap-4">
+            <!-- Circle behind -->
+            <img src="assets/ser&cont/circle.png" alt="Circle"
+                style="position: absolute; bottom: 500px; right: -2px; width: 400px; z-index: 0; pointer-events: none;" />
+
+            <!-- Image 3 -->
+            <img src="assets/images/event production.png" alt="Image 3" style="position: relative; z-index: 1;" />
+
+            <!-- Image 4 -->
+            <img src="assets/images/brand promotions.png" alt="Image 4" style="position: relative; z-index: 1;" />
+        </div>
+
+        <!-- Wrapper div for Image 5 with full-width background -->
+        <div style="width: screen; height:auto; 
+         background: url('assets/ser&cont/bg image.png') no-repeat center center; 
+         background-size: cover; 
+         display: flex; 
+         justify-content: center;">
+
+            <img src="assets/images/media and pr.png" alt="Image 5" />
+        </div>
     </section>
+
+
     <style>
         .image-stack-section {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 3.5rem;
-            /* space between images */
-            padding: 5rem;
-
+            margin-bottom: 10px;
         }
 
         .image-stack-section img {
-            width: 60%;
+            width: 75%;
             height: auto;
             border-radius: 10px;
-            /* optional rounded corners */
         }
     </style>
 
+
+    <!-- Footer -->
+    <footer class="text-white w-full pt-16 pb-6 font-poppins bg-[#0B0B0B] text-[17px]">
+        <div class="w-full flex flex-col md:flex-row justify-between items-start px-4 lg:px-12 xl:px-20">
+            <!-- Logo & Description -->
+            <div class="mb-10 md:mb-0 w-full pl-10 pr-14 md:w-1/3">
+                <img src="assets/images/logo.png" alt="ClosedLoop Logo" class="w-[130px] mb-4" />
+                <p class="leading-relaxed text-white/80 max-w-xs">
+                    Transforming the entertainment industry through innovative artist management and cutting-edge
+                    event production.
+                </p>
+
+                <!-- Contact Info -->
+                <div class="mt-6 space-y-4 text-white/80">
+                    <div class="flex items-center gap-2">
+                        <img src="assets/images/icons/email icon.png" class="w-5 h-5" />
+                        <span>Media@closedloop.in</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <img src="assets/images/icons/phone icon.png" class="w-5 h-5" />
+                        <span>+91 9663358202</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <img src="assets/images/icons/maps icon.png" class="w-5 h-5" />
+                        <span>Bengaluru, India</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div
+                class="grid grid-cols-1 pt-15 md:grid-cols-3 gap-12 w-full md:w-2/3 items-start pl-6 md:pl-16 mt-14 pt-12 md:mt-12">
+                <!-- Company -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#">Artist Management</a></li>
+                        <li><a href="#">Event Production</a></li>
+                        <li><a href="#">Talent Booking</a></li>
+                        <li><a href="#">Brand Partnerships</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#">Help Centre</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div
+            class="w-full mt-12 border-t border-[#4DA5F5] pt-6 px-4 lg:px-12 xl:px-20 flex flex-col md:flex-row justify-between items-center text-white/50 gap-3 md:gap-4 text-[16px] sm:text-[17px] leading-snug text-center md:text-left break-words">
+            <p
+                class="w-full md:w-auto whitespace-normal break-words leading-snug text-center md:text-left ml-0 md:ml-2">
+                &copy; 2025 ClosedLoop. All rights reserved.
+            </p>
+            <div class="flex gap-4 justify-center md:justify-end w-full md:w-auto">
+                <a href="#"><img src="assets/images/icons/Instagram.png" class="w-4 h-4" alt="Instagram" /></a>
+                <a href="#"><img src="assets/images/icons/Facebook F.png" class="w-4 h-4" alt="Facebook" /></a>
+                <a href="#"><img src="assets/images/icons/X.png" class="w-4 h-4" alt="Twitter" /></a>
+                <a href="#"><img src="assets/images/icons/LinkedIn 2.png" class="w-4 h-4" alt="LinkedIn" /></a>
+                <a href="#"><img src="assets/images/icons/YouTube.png" class="w-4 h-4" alt="YouTube" /></a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
