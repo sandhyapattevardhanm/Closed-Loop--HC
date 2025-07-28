@@ -1,0 +1,313 @@
+/* index.css - Custom styles to fix UI and text overflow issues for index.html */
+
+/* Make fixed width/height containers responsive */
+.vision-mission-container > div {
+    max-width: 100%;
+    height: auto;
+    min-width: 280px; /* minimum width for readability */
+}
+
+/* Ensure flex containers wrap on smaller screens */
+.flex-wrap-fix {
+    flex-wrap: wrap !important;
+}
+
+/* Text wrapping and overflow fixes */
+.text-wrap-fix {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* Adjust absolute positioned petals container */
+.petal-container {
+    max-width: 100%;
+    height: auto;
+    position: relative !important;
+}
+
+/* Responsive adjustments for cards */
+.card-container {
+    max-width: 100%;
+    height: auto;
+    min-width: 180px;
+}
+
+/* Buttons and links padding fix */
+.button-fix {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    white-space: normal;
+    word-break: break-word;
+}
+
+/* Responsive font size adjustments */
+.responsive-text {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Prevent horizontal scroll on body */
+body {
+    overflow-x: hidden;
+}
+
+/* Animations and transitions */
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in forwards;
+}
+
+/* Slide in from bottom */
+@keyframes slideInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-up {
+    animation: slideInUp 0.8s ease-out forwards;
+}
+
+/* Scale up on hover */
+.scale-hover {
+    transition: transform 0.3s ease;
+}
+
+.scale-hover:hover {
+    transform: scale(1.05);
+}
+
+/* Button hover effect */
+.button-hover {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-hover:hover {
+    background-color: #e2e8f0; /* Tailwind gray-200 */
+    color: #000000;
+}
+
+/* Card hover shadow */
+.card-hover {
+    transition: box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments for animations */
+@media (max-width: 640px) {
+    .responsive-text {
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+}
+
+/* Glow effect on hover */
+.glow-hover {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.glow-hover:hover {
+    box-shadow: 0 0 15px 5px rgba(140, 161, 255, 0.7);
+    transform: scale(1.05);
+}
+
+/* Spin animation for core values icons */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Spin on hover only */
+.spin:hover {
+    animation: spin 4s linear infinite;
+}
+
+.spin {
+    animation: none;
+}
+
+/* Navbar styles for responsiveness */
+header nav {
+    transition: max-height 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.25rem; /* space-x-5 */
+}
+
+.nav-links a {
+    position: relative;
+    padding-bottom: 0.25rem;
+}
+
+.nav-links a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #8CA1FF; /* blue underline */
+    border-radius: 2px;
+}
+
+/* Hamburger menu button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 30;
+}
+
+.hamburger div {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s linear;
+    position: relative;
+}
+
+/* Hamburger animation when active */
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg);
+    top: 8px;
+    position: relative;
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg);
+    top: -8px;
+    position: relative;
+}
+
+/* Responsive navbar menu */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        background-color: rgba(2, 9, 22, 0.95);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        z-index: 20;
+    }
+
+    .nav-links.open {
+        max-height: 300px; /* enough to show all links */
+    }
+
+    header nav {
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Petals text alignment and font consistency */
+.petal-container > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1rem;
+    text-align: center;
+    max-width: 280px;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.petal-container h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.petal-container p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+/* Consistent font size and style for headings and subheadings */
+h2, h3 {
+    font-family: 'Outfit', sans-serif;
+    color: white;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+}
+
+/* Paragraphs consistent style */
+p {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 640px) {
+    h2 {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+        line-height: 1.25rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.3rem;
+    }
+}
