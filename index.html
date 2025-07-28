@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home | Closed Loop</title>
 
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/index.css" />
 
-    <!-- Font & Custom Styles -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
 
@@ -22,227 +21,523 @@
 
 <body class="text-white text-[17px] relative overflow-x-hidden">
 
-    <!-- Background Waves -->
     <img src="assets/images/waves.png" alt="Waves Background"
         class="fixed top-0 left-0 w-full h-full object-cover z-0 pointer-events-none" />
 
-    <!-- Header -->
-    <header
-        class="w-full max-w-7xl mx-auto mt-6 px-4 sm:px-6 lg:px-12 flex flex-wrap items-center justify-between border border-white/30 rounded-full bg-white/5 backdrop-blur-md relative z-10">
+    <header x-data="{ open: false }"
+        class="relative z-10 w-full max-w-7xl mx-auto mt-8 pl-6 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md">
+
         <!-- Logo -->
-        <div class="text-white font-semibold text-2xl md:text-3xl py-3">
-            ClosedLoop
+        <div class="text-white font-semibold text-[26px] font-montserrat-alt"><img src="assets\images\logo.png"
+                class="w-19 h-14" alt="">
+
         </div>
 
-        <!-- Navigation -->
-        <nav class="flex flex-wrap gap-6 items-center text-base sm:text-lg font-light">
-            <a href="index.html" class="relative text-white hover:text-gray-300">
-                Home
-                <span class="absolute -bottom-2 left-0 w-full h-[2px] bg-white rounded-full"></span>
-            </a>
-            <a href="about.html" class="text-white hover:text-gray-300">About</a>
-            <a href="services.html" class="text-white hover:text-gray-300">Services</a>
-            <a href="#" class="text-white hover:text-gray-300">Tickets</a>
-        </nav>
+        <!-- Desktop Nav + Contact -->
+        <div class="hidden md:flex items-center space-x-16">
+            <nav class="flex items-center space-x-12 pr-16 mr-16 text-[20px] font-light relative">
+                <div class="relative flex items-center">
+                    <a href="index.html" class="text-white hover:text-gray-300">Home</a>
+                    <span class="absolute bottom-[-10px] left-0 w-full h-[2px] bg-white rounded-full"></span>
+                </div>
+                <a href="about.html" class="text-white hover:text-gray-300">About</a>
+                <a href="services.html" class="text-white hover:text-gray-300">Services</a>
+                <a href="#" class="text-white hover:text-gray-300">Tickets</a>
+            </nav>
+            <!-- Contact Us -->
+            <div class="relative">
+                <div
+                    class="pl-8 pr-20 py-3.5 flex items-center text-[20px] font-light text-white rounded-full bg-gray-900 backdrop-blur-md hover:bg-white/20 transition relative z-10">
+                    <a href="contact.html">Contact us</a>
+                </div>
+                <div
+                    class="absolute right-1 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white flex items-center justify-center z-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-black transform -rotate-45"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </div>
+            </div>
+        </div>
 
-        <!-- Contact Us Button -->
-        <div class="relative mt-4 sm:mt-0">
-            <div
-                class="pl-6 pr-16 py-2.5 sm:py-3.5 flex items-center text-sm sm:text-base md:text-lg text-white rounded-full bg-gray-900 backdrop-blur-md hover:bg-white/20 transition relative z-10">
-                <a href="contact.html">Contact us</a>
-            </div>
-            <div
-                class="absolute right-1 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white flex items-center justify-center z-20">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 sm:h-6 sm:w-6 text-black transform -rotate-45"
-                    fill="none" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-            </div>
+        <!-- Hamburger Icon (Mobile Only) -->
+        <button @click="open = !open" x-show="!open" class="md:hidden z-50 relative pr-6">
+            <!-- Your hamburger icon here -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        <!-- Mobile Nav Panel -->
+        <div x-show="open" x-transition @click.outside="open = false"
+            class="absolute top-0 right-0 w-[40%] bg-[#020916] border border-blue-500 rounded-bl-3xl md:hidden px-6 py-4 space-y-4 text-white text-[18px] font-light z-50">
+            <a href="index.html" class="block hover:text-gray-300">Home</a>
+            <a href="about.html" class="block hover:text-gray-300">About</a>
+            <a href="services.html" class="block hover:text-gray-300">Services</a>
+            <a href="#" class="block hover:text-gray-300">Tickets</a>
+            <a href="contact.html" class="block hover:text-gray-300">Contact Us</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative z-10 flex flex-col items-center justify-center text-center mt-20 sm:mt-32 px-4">
-        <!-- Infinity + Logo -->
-        <div class="relative w-[90%] max-w-[500px]">
+    <section class="relative z-10 flex flex-col items-center justify-center text-center mt-20 sm:mt-32 px-4 fade-in">
+        <div class="relative w-[90%] max-w-[500px] scale-hover">
             <img src="assets/images/infinity.png" alt="Infinity Loop" class="w-full h-auto" />
             <img src="assets/images/ClosedLoop.png" alt="ClosedLoop Logo"
                 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%]" />
         </div>
 
-        <!-- Supporting Text -->
         <p class="mt-6 max-w-xl text-sm sm:text-base text-gray-300 leading-relaxed">
             We’re an established, sustainable and smart transport agency dedicated to delivering tomorrow’s travel. Join
             us today, a tribute to future generations.
         </p>
 
-        <!-- Buttons -->
         <div class="mt-10 flex flex-wrap justify-center gap-4">
             <a href="#"
-                class="px-6 py-2.5 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition text-sm sm:text-base">
+                class="px-6 py-2.5 rounded-full bg-white text-black font-semibold button-hover transition text-sm sm:text-base button-fix">
                 Book Tickets
             </a>
             <a href="#"
-                class="px-6 py-2.5 rounded-full border border-white hover:bg-white hover:text-black transition text-sm sm:text-base">
+                class="px-6 py-2.5 rounded-full border border-white hover:bg-white hover:text-black button-hover transition text-sm sm:text-base button-fix">
                 Watch
             </a>
         </div>
     </section>
 
-    <!-- Vision & Mission Section -->
-    <section class="relative z-10 mt-20 sm:mt-28 px-6 flex flex-col items-center">
-        <div class="flex flex-col md:flex-row justify-center items-center gap-12 max-w-6xl w-full">
-            <!-- Vision -->
-            <div class="bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-6 w-full md:w-[350px]">
-                <h2 class="text-xl font-semibold mb-4 text-white text-center md:text-left">Our Vision</h2>
-                <p class="text-sm text-gray-300 leading-relaxed">
-                    Redefining live events by connecting talent, opportunity, and audience. <br><br>
-                    Giving every artist a chance to grow, collaborate, and succeed.
-                </p>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <section class="bg-[#0B0F1C] py-20 px-4 relative overflow-hidden">
+        <div
+            class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10 group relative z-10">
+
+            <!-- VISION CARD -->
+            <div class="relative w-full max-w-[420px] h-[480px] flex flex-col items-center justify-center 
+        transition-transform duration-500 group-hover:translate-x-8 overflow-hidden rounded-xl z-20">
+
+                <img src="assets/images/Vector 6.png" alt="Vision Shape"
+                    class="absolute top-1/2 left-1/2 w-[110%] h-[110%] -translate-x-1/2 -translate-y-1/2 object-contain z-0
+          transition duration-300 group-hover:brightness-[1.2] group-hover:drop-shadow-[0_0_18px_rgba(140,161,255,0.7)] pointer-events-none" />
+
+                <div class="relative z-10 px-8 text-center text-white flex flex-col justify-center items-center h-full">
+                    <div class="mb-3 transition duration-300 group-hover:drop-shadow-[0_0_20px_rgba(140,161,255,0.8)]">
+                        <i data-lucide="target" class="w-10 h-10 text-white opacity-80"></i>
+                    </div>
+                    <h2 class="text-4xl font-extrabold mb-4 tracking-wide">Our Vision</h2>
+                    <p class="text-base leading-loose text-gray-300 max-w-[260px]">
+                        Redefining live events by<br />
+                        connecting talent, opportunity,<br />
+                        and audience.<br /><br />
+                        Giving every artist a chance<br />
+                        to grow, collaborate, and succeed.
+                    </p>
+                </div>
             </div>
 
-            <!-- Infinity Image Center -->
-            <div class="w-[100px] sm:w-[120px] md:w-[160px]">
-                <img src="assets/images/infinity.png" alt="Infinity" class="w-full opacity-80" />
-            </div>
+            <!-- Infinity Symbol -->
+            <img src="assets/images/wow-vertical.png" alt="Infinity Symbol" class="absolute top-1/2 left-1/2 w-[120px] md:w-[160px] xl:w-[200px] -translate-x-1/2 -translate-y-1/2 z-30
+        opacity-0 group-hover:opacity-100 transition duration-700 ease-in-out pointer-events-none" />
 
-            <!-- Mission -->
-            <div class="bg-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-6 w-full md:w-[350px]">
-                <h2 class="text-xl font-semibold mb-4 text-white text-center md:text-left">Our Mission</h2>
-                <p class="text-sm text-gray-300 leading-relaxed">
-                    Empowering artists through management, partnerships, and events. <br><br>
-                    Delivering seamless live experiences from planning to performance.
-                </p>
+            <!-- MISSION CARD -->
+            <div class="relative w-full max-w-[420px] h-[480px] flex flex-col items-center justify-center 
+        transition-transform duration-500 group-hover:-translate-x-8 overflow-hidden rounded-xl z-20">
+
+                <img src="assets/images/Vector 7.png" alt="Mission Shape"
+                    class="absolute top-1/2 left-1/2 w-[110%] h-[110%] -translate-x-1/2 -translate-y-1/2 object-contain z-0
+          transition duration-300 group-hover:brightness-[1.2] group-hover:drop-shadow-[0_0_18px_rgba(140,161,255,0.7)] pointer-events-none" />
+
+                <div class="relative z-10 px-8 text-center text-white flex flex-col justify-center items-center h-full">
+                    <div class="mb-3 transition duration-300 group-hover:drop-shadow-[0_0_20px_rgba(140,161,255,0.8)]">
+                        <i data-lucide="compass" class="w-10 h-10 text-white opacity-80"></i>
+                    </div>
+                    <h2 class="text-4xl font-extrabold mb-4 tracking-wide">Our Mission</h2>
+                    <p class="text-base leading-loose text-gray-300 max-w-[260px]">
+                        Empowering artists through<br />
+                        management, partnerships,<br />
+                        and events.<br /><br />
+                        Delivering seamless experiences<br />
+                        from planning to performance.
+                    </p>
+                </div>
             </div>
         </div>
+
+        <!-- Minimal Decorative Bottom Glow or Accent -->
+        <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-16 bg-gradient-to-r from-blue-500/20 via-white/10 to-blue-500/20 blur-2xl rounded-full opacity-40 pointer-events-none">
+        </div>
+
+        <!-- Activate Lucide Icons -->
+        <script>
+            lucide.createIcons();
+        </script>
     </section>
 
-    <!-- Core Values Section -->
+
+
+
+
     <section class="mt-20 sm:mt-32 px-6 sm:px-12 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between gap-10">
 
-            <!-- Left Content -->
+            <!-- Left Text Content -->
             <div class="flex-1">
-                <h2 class="text-white text-3xl font-semibold leading-snug">Our <br><span
-                        class="text-gray-400 font-normal">Core Values</span></h2>
-                <p class="mt-6 text-gray-400 max-w-sm text-sm leading-relaxed">
+                <h2 class="text-white text-4xl sm:text-5xl font-semibold leading-snug">
+                    Our <br />
+                    <span class="text-gray-400 font-normal">Core Values</span>
+                </h2>
+                <p class="mt-6 text-gray-400 text-2xl leading-relaxed max-w-sm">
                     The principles that guide everything we do, from artist relationships to audience experiences.
                 </p>
             </div>
 
-            <!-- Right Cards Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 flex-1">
-                <!-- Cards -->
-                <template id="value-card">
+            <!-- Core Values Cards Grid -->
+            <div class="relative flex-1 grid grid-cols-2 gap-x-6 gap-y-12">
+
+                <!-- Left Column -->
+                <div class="flex flex-col gap-y-12">
+                    <!-- Creativity -->
                     <div
-                        class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white">
-                        <img src="" alt="Icon" class="mx-auto mb-4 w-10">
-                        <h3 class="text-lg font-semibold mb-2">Title</h3>
-                        <p class="text-sm text-gray-300">Description</p>
+                        class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white min-h-[260px] flex flex-col items-center justify-start transition duration-300 hover:shadow-[0_0_20px_rgba(140,161,255,0.4)] hover:border-[#8CA1FF] group">
+                        <img src="assets/icons/creativity.png" alt="Creativity"
+                            class="mb-4 w-14 transition-transform duration-500 group-hover:rotate-[360deg]" />
+                        <h3 class="text-xl font-semibold mb-2">Creativity</h3>
+                        <p class="text-[15px] text-gray-300 leading-relaxed">
+                            Innovation is at our core—we thrive on bold ideas and unforgettable experiences. We aim to
+                            create entertainment that becomes a lasting memory.
+                        </p>
                     </div>
-                </template>
 
-                <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white">
-                    <img src="assets\icons\creativity.png" alt="Creativity" class="mx-auto mb-4 w-10">
-                    <h3 class="text-lg font-semibold mb-2">Creativity</h3>
-                    <p class="text-sm text-gray-300">Innovation is at our core. We thrive on bold ideas and
-                        unforgettable experiences.</p>
-                </div>
-                <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white">
-                    <img src="assets\icons\Integrity.png" alt="Integrity" class="mx-auto mb-4 w-10">
-                    <h3 class="text-lg font-semibold mb-2">Integrity</h3>
-                    <p class="text-sm text-gray-300">We value transparency, trust, and professionalism in every
-                        partnership.</p>
-                </div>
-                <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white">
-                    <img src="assets/icons/excellence.png" alt="Excellence" class="mx-auto mb-4 w-10">
-                    <h3 class="text-lg font-semibold mb-2">Excellence</h3>
-                    <p class="text-sm text-gray-300">Excellence is our mindset—reflected in every detail from planning
-                        to performance.</p>
-                </div>
-                <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white">
-                    <img src="assets/icons/collaboration.png" alt="Collaboration" class="mx-auto mb-4 w-10">
-                    <h3 class="text-lg font-semibold mb-2">Collaboration</h3>
-                    <p class="text-sm text-gray-300">Through global partnerships, we create shared growth and unity.</p>
-                </div>
-                <div class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white">
-                    <img src="assets/icons/diversity and inclusion.png" alt="Diversity" class="mx-auto mb-4 w-10">
-                    <h3 class="text-lg font-semibold mb-2">Diversity & Inclusion</h3>
-                    <p class="text-sm text-gray-300">We give space to stories that challenge norms and celebrate
-                        cultures.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <!-- Excellence -->
+                    <div
+                        class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white min-h-[260px] flex flex-col items-center justify-start transition duration-300 hover:shadow-[0_0_20px_rgba(140,161,255,0.4)] hover:border-[#8CA1FF] group">
+                        <img src="assets/icons/excellence.png" alt="Excellence"
+                            class="mb-4 w-14 transition-transform duration-500 group-hover:rotate-[360deg]" />
+                        <h3 class="text-xl font-semibold mb-2">Excellence</h3>
+                        <p class="text-[15px] text-gray-300 leading-relaxed">
+                            Excellence is our mindset—reflected in every detail, from planning to performance. We aim to
+                            exceed.
+                        </p>
+                    </div>
 
-    <!-- Services Section -->
-    <section class="bg-[#050B18] py-16 px-4 sm:px-8">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-semibold text-white mb-12">What We Offer</h2>
-            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-
-                <!-- Card 1 -->
-                <div
-                    class="rounded-3xl bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-md p-6 flex flex-col items-center text-center border border-white/10 hover:border-white/20 transition">
-                    <img src="assets/icons/artist management.png" alt="Artist Management Icon" class="w-20 h-20 mb-4" />
-                    <h3 class="text-white text-xl font-bold mb-2">Artist Management</h3>
-                    <p class="text-white/70 text-sm">Full-spectrum artist career guidance, branding, and talent
-                        development.</p>
+                    <!-- Diversity & Inclusion -->
+                    <div
+                        class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white min-h-[260px] flex flex-col items-center justify-start transition duration-300 hover:shadow-[0_0_20px_rgba(140,161,255,0.4)] hover:border-[#8CA1FF] group">
+                        <img src="assets/icons/diversity and inclusion.png" alt="Diversity & Inclusion"
+                            class="mb-4 w-14 transition-transform duration-500 group-hover:rotate-[360deg]" />
+                        <h3 class="text-xl font-semibold mb-2">Diversity & Inclusion</h3>
+                        <p class="text-[15px] text-gray-300 leading-relaxed">
+                            We celebrate diverse voices and global cultures. Our platform gives space to stories that
+                            challenge norms and inspire.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div
-                    class="rounded-3xl bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-md p-6 flex flex-col items-center text-center border border-white/10 hover:border-white/20 transition">
-                    <img src="assets/icons/talent booking.png" alt="Talent Booking Icon" class="w-20 h-20 mb-4" />
-                    <h3 class="text-white text-xl font-bold mb-2">Talent Booking</h3>
-                    <p class="text-white/70 text-sm">Connecting top-tier performers with the right audience and events.
-                    </p>
-                </div>
+                <!-- Right Column -->
+                <div class="flex flex-col gap-y-12 mt-20">
+                    <!-- Integrity -->
+                    <div
+                        class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white min-h-[260px] flex flex-col items-center justify-start transition duration-300 hover:shadow-[0_0_20px_rgba(140,161,255,0.4)] hover:border-[#8CA1FF] group">
+                        <img src="assets/icons/Integrity.png" alt="Integrity"
+                            class="mb-4 w-14 transition-transform duration-500 group-hover:rotate-[360deg]" />
+                        <h3 class="text-xl font-semibold mb-2">Integrity</h3>
+                        <p class="text-[15px] text-gray-300 leading-relaxed">
+                            We value transparency, trust, and professionalism in every partnership. Artists are
+                            empowered to express themselves authentically and freely.
+                        </p>
+                    </div>
 
-                <!-- Card 3 -->
-                <div
-                    class="rounded-3xl bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-md p-6 flex flex-col items-center text-center border border-white/10 hover:border-white/20 transition">
-                    <img src="assets/icons/event production.png" alt="Event Production Icon" class="w-20 h-20 mb-4" />
-                    <h3 class="text-white text-xl font-bold mb-2">Event Production</h3>
-                    <p class="text-white/70 text-sm">Creative, seamless planning and production of unforgettable
-                        experiences.</p>
-                </div>
-
-                <!-- Card 4 -->
-                <div
-                    class="rounded-3xl bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-md p-6 flex flex-col items-center text-center border border-white/10 hover:border-white/20 transition">
-                    <img src="assets/icons/brand partnership.png" alt="Partnership Icon" class="w-20 h-20 mb-4" />
-                    <h3 class="text-white text-xl font-bold mb-2">Partnership</h3>
-                    <p class="text-white/70 text-sm">Strategic alliances that amplify both artist and brand identities.
-                    </p>
-                </div>
-
-                <!-- Card 5 -->
-                <div
-                    class="rounded-3xl bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-md p-6 flex flex-col items-center text-center border border-white/10 hover:border-white/20 transition">
-                    <img src="assets/icons/media and pr.png" alt="Media & PR Icon" class="w-20 h-20 mb-4" />
-                    <h3 class="text-white text-xl font-bold mb-2">Media & PR</h3>
-                    <p class="text-white/70 text-sm">Targeted publicity and media storytelling to elevate your presence.
-                    </p>
-                </div>
-
-                <!-- Card 6 -->
-                <div
-                    class="rounded-3xl bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-md p-6 flex flex-col items-center text-center border border-white/10 hover:border-white/20 transition">
-                    <img src="assets/icons/production set.png" alt="Production Setup Icon" class="w-20 h-20 mb-4" />
-                    <h3 class="text-white text-xl font-bold mb-2">Production Setup</h3>
-                    <p class="text-white/70 text-sm">End-to-end technical execution including staging, lighting, and AV
-                        support.</p>
+                    <!-- Collaboration -->
+                    <div
+                        class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white min-h-[260px] flex flex-col items-center justify-start transition duration-300 hover:shadow-[0_0_20px_rgba(140,161,255,0.4)] hover:border-[#8CA1FF] group">
+                        <img src="assets/icons/collaboration.png" alt="Collaboration"
+                            class="mb-4 w-14 transition-transform duration-500 group-hover:rotate-[360deg]" />
+                        <h3 class="text-xl font-semibold mb-2">Collaboration</h3>
+                        <p class="text-[15px] text-gray-300 leading-relaxed">
+                            We believe success is built together. Through global partnerships, we drive shared growth
+                            and make the world feel more connected.
+                        </p>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
+    <section class="bg-[#050B18] py-12 px-4 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-left text-white text-4xl font-bold mb-2">
+                What <span class="text-[#A0AFC0]">We Offer</span>
+            </h2>
+            <p class="text-left text-[#A0AFC0] mb-10 text-2xl">
+                Full-circle entertainment services<br> built to amplify your event and elevate talent.
+            </p>
 
-    <!-- Footer Padding -->
-    <footer class="h-[300px] w-full"></footer>
+            <!-- Row of 6 cards -->
+            <div class="flex justify-between items-stretch gap-2">
+                <!-- Repeat this block 6 times with different content -->
+                <div class="flex-[1_1_16%]">
+                    <div
+                        class="group h-[340px] p-3 rounded-[70px_0_70px_0] border border-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center bg-transparent">
+                        <img src="assets/icons/artist management.png" alt="Artist Management"
+                            class="w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110" />
+                        <h3 class="text-white font-bold text-xl mb-1">Artist Management</h3>
+                        <p class="text-[#A0AFC0] text-xl leading-snug">Full-spectrum artist career guidance, branding,
+                            and talent development.</p>
+                    </div>
+                </div>
 
+                <div class="flex-[1_1_16%]">
+                    <div
+                        class="group h-[340px] p-3 rounded-[70px_0_70px_0] border border-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center bg-transparent">
+                        <img src="assets/icons/talent booking.png" alt="Talent Booking"
+                            class="w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110" />
+                        <h3 class="text-white font-bold text-xl mb-1">Talent <br> Booking</h3>
+                        <p class="text-[#A0AFC0] text-xl leading-snug">Connecting top-tier performers with the right
+                            audience and events.</p>
+                    </div>
+                </div>
+
+                <div class="flex-[1_1_16%]">
+                    <div
+                        class="group h-[340px] p-3 rounded-[70px_0_70px_0] border border-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center bg-transparent">
+                        <img src="assets/icons/event production.png" alt="Event Production"
+                            class="w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110" />
+                        <h3 class="text-white font-bold text-xl mb-1">Event Production</h3>
+                        <p class="text-[#A0AFC0] text-xl leading-snug">Creative, seamless planning and production of
+                            unforgettable experiences.</p>
+                    </div>
+                </div>
+
+                <div class="flex-[1_1_16%]">
+                    <div
+                        class="group h-[340px] p-3 rounded-[70px_0_70px_0] border border-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center bg-transparent">
+                        <img src="assets/icons/brand partnership.png" alt="Brand Partnership"
+                            class="w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110" />
+                        <h3 class="text-white font-bold text-xl mb-1">Brand Partnership</h3>
+                        <p class="text-[#A0AFC0] text-xl leading-snug">Strategic alliances that amplify both artist and
+                            brand identities.</p>
+                    </div>
+                </div>
+
+                <div class="flex-[1_1_16%]">
+                    <div
+                        class="group h-[340px] p-3 rounded-[70px_0_70px_0] border border-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center bg-transparent">
+                        <img src="assets/icons/media and pr.png" alt="Media & PR"
+                            class="w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110" />
+                        <h3 class="text-white font-bold text-xl mb-1">Media & PR</h3>
+                        <p class="text-[#A0AFC0] text-xl leading-snug">Targeted publicity and media storytelling to
+                            elevate your presence.</p>
+                    </div>
+                </div>
+
+                <div class="flex-[1_1_16%]">
+                    <div
+                        class="group h-[340px] p-3 rounded-[70px_0_70px_0] border border-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center bg-transparent">
+                        <img src="assets/icons/production set.png" alt="Production Setup"
+                            class="w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110" />
+                        <h3 class="text-white font-bold text-xl mb-1">Production Setup</h3>
+                        <p class="text-[#A0AFC0] text-xl leading-snug">End-to-end technical execution including staging,
+                            lighting,
+                            and AV support.</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-[#050B18] py-24 px-6 sm:px-10">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+
+            <!-- Left Content -->
+            <div class="text-left max-w-md lg:max-w-lg lg:pt-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-white mb-6 leading-snug">
+                    Why Choose <span class="text-[#8CA1FF]">ClosedLoop</span>?
+                </h2>
+                <p class="text-white/70 text-base leading-relaxed text-2xl">
+                    Where passion meets precision—bringing entertainment visions to life with style, skill, and soul.
+                </p>
+            </div>
+
+            <!-- Right Flower -->
+            <div class="relative w-[650px] h-[650px]">
+
+                <!-- Top Petal -->
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-[320px]">
+                    <img src="assets/images/clover (1) (1).png" class="w-full h-full object-contain" alt="Top Petal" />
+                    <div class="absolute inset-0 flex items-center justify-center text-center">
+                        <div class="flex flex-col items-center px-3 max-w-[170px] max-h-[170px]">
+                            <img src="assets/icons/16.png" class="w-8 h-8 mb-2" alt="Elite Talent Networks" />
+                            <h3 class="text-white text-xs font-semibold leading-snug mb-1">
+                                Elite Talent Networks
+                            </h3>
+                            <p class="text-white/70 text-[11px] leading-tight">
+                                Carefully selected performers—vetted for originality, professionalism, and
+                                event-readiness.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Petal -->
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[320px] h-[320px]">
+                    <img src="assets/images/clover (1) (1).png" class="w-full h-full object-contain rotate-180"
+                        alt="Bottom Petal" />
+                    <div class="absolute inset-0 flex items-center justify-center text-center">
+                        <div class="flex flex-col items-center px-3 max-w-[170px] max-h-[170px]">
+                            <img src="assets/icons/endtoend services.png" class="w-8 h-8 mb-2"
+                                alt="End-to-End Events Service" />
+                            <h3 class="text-white text-xs font-semibold leading-snug mb-1">
+                                End-to-End Events Service
+                            </h3>
+                            <p class="text-white/70 text-[11px] leading-tight">
+                                Artist sourcing, stage production, branding & logistics—handled through one integrated
+                                approach.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Left Petal -->
+                <div class="absolute top-1/2 left-0 -translate-y-1/2 w-[320px] h-[320px]">
+                    <img src="assets/images/clover (1) (1).png" class="w-full h-full object-contain -rotate-90"
+                        alt="Left Petal" />
+                    <div class="absolute inset-0 flex items-center justify-center text-center">
+                        <div class="flex flex-col items-center px-3 max-w-[170px] max-h-[170px]">
+                            <img src="assets/icons/a passionate team.png" class="w-8 h-8 mb-2" alt="Creative Passion" />
+                            <h3 class="text-white text-xs font-semibold leading-snug mb-1">
+                                Creative Passion, Real Results
+                            </h3>
+                            <p class="text-white/70 text-[11px] leading-tight">
+                                Personalized experiences delivered with impact and soul—fully aligned to your vision.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Petal -->
+                <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[320px] h-[320px]">
+                    <img src="assets/images/clover (1) (1).png" class="w-full h-full object-contain rotate-90"
+                        alt="Right Petal" />
+                    <div class="absolute inset-0 flex items-center justify-center text-center">
+                        <div class="flex flex-col items-center px-3 max-w-[170px] max-h-[170px]">
+                            <img src="assets/icons/diverse events.png" class="w-8 h-8 mb-2"
+                                alt="Diverse Event Expertise" />
+                            <h3 class="text-white text-xs font-semibold leading-snug mb-1">
+                                Diverse Event Expertise
+                            </h3>
+                            <p class="text-white/70 text-[11px] leading-tight">
+                                From launches to weddings, our hands-on planning ensures flawless execution.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="text-white w-full pt-16 pb-6 font-poppins bg-[#0B0B0B] text-[17px]">
+        <div class="w-full flex flex-col md:flex-row justify-between items-start px-4 lg:px-12 xl:px-20">
+            <!-- Logo & Description -->
+            <div class="mb-10 md:mb-0 w-full pl-10 pr-14 md:w-1/3">
+                <img src="assets/images/logo.png" alt="ClosedLoop Logo" class="w-[130px] mb-4" />
+                <p class="leading-relaxed text-white/80 max-w-xs">
+                    Transforming the entertainment industry through innovative artist management and
+                    cutting-edge
+                    event production.
+                </p>
+
+                <!-- Contact Info -->
+                <div class="mt-6 space-y-4 text-white/80">
+                    <div class="flex items-center gap-2">
+                        <img src="assets/images/icons/email icon.png" class="w-5 h-5" />
+                        <span>Media@closedloop.in</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <img src="assets/images/icons/phone icon.png" class="w-5 h-5" />
+                        <span>+91 9663358202</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <img src="assets/images/icons/maps icon.png" class="w-5 h-5" />
+                        <span>Bengaluru, India</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div
+                class="grid grid-cols-1 pt-15 md:grid-cols-3 gap-12 w-full md:w-2/3 items-start pl-6 md:pl-16 mt-14 pt-12 md:mt-12">
+                <!-- Company -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#">Artist Management</a></li>
+                        <li><a href="#">Event Production</a></li>
+                        <li><a href="#">Talent Booking</a></li>
+                        <li><a href="#">Brand Partnerships</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-white/80">
+                        <li><a href="#">Help Centre</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div
+            class="w-full mt-12 border-t border-[#4DA5F5] pt-6 px-4 lg:px-12 xl:px-20 flex flex-col md:flex-row justify-between items-center text-white/50 gap-3 md:gap-4 text-[16px] sm:text-[17px] leading-snug text-center md:text-left break-words">
+            <p
+                class="w-full md:w-auto whitespace-normal break-words leading-snug text-center md:text-left ml-0 md:ml-2">
+                &copy; 2025 ClosedLoop. All rights reserved.
+            </p>
+            <div class="flex gap-4 justify-center md:justify-end w-full md:w-auto">
+                <a href="#"><img src="assets/images/icons/Instagram.png" class="w-4 h-4" alt="Instagram" /></a>
+                <a href="#"><img src="assets/images/icons/Facebook F.png" class="w-4 h-4" alt="Facebook" /></a>
+                <a href="#"><img src="assets/images/icons/X.png" class="w-4 h-4" alt="Twitter" /></a>
+                <a href="#"><img src="assets/images/icons/LinkedIn 2.png" class="w-4 h-4" alt="LinkedIn" /></a>
+                <a href="#"><img src="assets/images/icons/YouTube.png" class="w-4 h-4" alt="YouTube" /></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+            hamburger.setAttribute('aria-expanded', !expanded);
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+    </script>
 </body>
 
 </html>

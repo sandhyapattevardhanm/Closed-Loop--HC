@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotating Flower</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .flower {
+            width: 600px;
+            height: 600px;
+            position: relative;
+            animation: rotateFlower 12s steps(1) infinite;
+        }
+
+        .flower:hover {
+            animation-play-state: paused;
+        }
+
+        .petal {
+            width: 280px;
+            height: 280px;
+            position: absolute;
+            transition: transform 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .petal img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 12px rgba(140, 161, 255, 0.4));
+        }
+
+        .petal-content {
+            z-index: 10;
+            width: 150px;
+            text-align: center;
+            transform: rotate(0deg);
+        }
+
+        .step-0 .top {
+            transform: translate(-50%, -100%) rotate(0deg);
+        }
+
+        .step-0 .right {
+            transform: translate(100%, -50%) rotate(90deg);
+        }
+
+        .step-0 .bottom {
+            transform: translate(-50%, 100%) rotate(180deg);
+        }
+
+        .step-0 .left {
+            transform: translate(-100%, -50%) rotate(270deg);
+        }
+
+        .step-1 .top {
+            transform: translate(100%, -50%) rotate(90deg);
+        }
+
+        .step-1 .right {
+            transform: translate(-50%, 100%) rotate(180deg);
+        }
+
+        .step-1 .bottom {
+            transform: translate(-100%, -50%) rotate(270deg);
+        }
+
+        .step-1 .left {
+            transform: translate(-50%, -100%) rotate(0deg);
+        }
+
+        .step-2 .top {
+            transform: translate(-50%, 100%) rotate(180deg);
+        }
+
+        .step-2 .right {
+            transform: translate(-100%, -50%) rotate(270deg);
+        }
+
+        .step-2 .bottom {
+            transform: translate(-50%, -100%) rotate(0deg);
+        }
+
+        .step-2 .left {
+            transform: translate(100%, -50%) rotate(90deg);
+        }
+
+        .step-3 .top {
+            transform: translate(-100%, -50%) rotate(270deg);
+        }
+
+        .step-3 .right {
+            transform: translate(-50%, -100%) rotate(0deg);
+        }
+
+        .step-3 .bottom {
+            transform: translate(100%, -50%) rotate(90deg);
+        }
+
+        .step-3 .left {
+            transform: translate(-50%, 100%) rotate(180deg);
+        }
+
+        @keyframes rotateFlower {
+            0% {
+                transform: none;
+            }
+
+            0%,
+            24.9% {
+                transform: none;
+            }
+
+            25%,
+            49.9% {
+                transform: none;
+            }
+
+            50%,
+            74.9% {
+                transform: none;
+            }
+
+            75%,
+            100% {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-[#050B18] flex items-center justify-center min-h-screen">
+    <div id="flowerContainer" class="flower step-0">
+        <div class="petal top">
+            <img src="assets/images/clover.png" alt="petal" />
+            <div class="petal-content text-white">
+                <img src="assets/icons/16.png" class="mx-auto w-10 h-10 mb-2" />
+                <h3 class="text-sm font-semibold mb-1">Elite Talent</h3>
+                <p class="text-xs text-white/70 leading-tight">Curated performers vetted for quality & professionalism.
+                </p>
+            </div>
+        </div>
+        <div class="petal right">
+            <img src="assets/images/clover.png" alt="petal" />
+            <div class="petal-content text-white">
+                <img src="assets/icons/diverse events.png" class="mx-auto w-10 h-10 mb-2" />
+                <h3 class="text-sm font-semibold mb-1">Diverse Events</h3>
+                <p class="text-xs text-white/70 leading-tight">Weddings, launches & more executed with finesse.</p>
+            </div>
+        </div>
+        <div class="petal bottom">
+            <img src="assets/images/clover.png" alt="petal" />
+            <div class="petal-content text-white">
+                <img src="assets/icons/endtoend services.png" class="mx-auto w-10 h-10 mb-2" />
+                <h3 class="text-sm font-semibold mb-1">End-to-End</h3>
+                <p class="text-xs text-white/70 leading-tight">Complete service from artist to execution.</p>
+            </div>
+        </div>
+        <div class="petal left">
+            <img src="assets/images/clover.png" alt="petal" />
+            <div class="petal-content text-white">
+                <img src="assets/icons/a passionate team.png" class="mx-auto w-10 h-10 mb-2" />
+                <h3 class="text-sm font-semibold mb-1">Creative Team</h3>
+                <p class="text-xs text-white/70 leading-tight">We deliver with passion and alignment to your vision.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const flower = document.getElementById("flowerContainer");
+        let step = 0;
+        setInterval(() => {
+            if (flower.matches(':hover')) return;
+            step = (step + 1) % 4;
+            flower.className = `flower step-${step}`;
+        }, 3000);
+    </script>
+</body>
+
+</html>
