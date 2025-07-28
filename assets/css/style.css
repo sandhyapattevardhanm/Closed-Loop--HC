@@ -36,3 +36,95 @@
 .font-montserrat-alt {
     font-family: 'Montserrat Alternates', sans-serif;
 }
+
+.custom-trapezoid-border {
+    position: relative;
+    background: transparent;
+    color: white;
+    clip-path: polygon(0% 40%,
+            /* Point 1: top-left start of diagonal */
+            10% 0%,
+            /* Point 2: actual top-left corner */
+            100% 0%,
+            /* Point 3: top-right */
+            100% 60%,
+            /* Point 4: bottom-right corner before diagonal */
+            90% 100%,
+            /* Point 5: actual bottom-right diagonal tip */
+            0% 100%
+            /* Point 6: bottom-left */
+        );
+    border: 2px solid white;
+    padding: 2rem;
+}
+
+.trapezoid-box {
+    position: relative;
+    z-index: 1;
+}
+
+/* Main 6-sided border */
+.trapezoid-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    clip-path: polygon(0% 42%,
+            /* F */
+            10% 0%,
+            /* A */
+            100% 0%,
+            /* B */
+            100% 58%,
+            /* C */
+            90% 100%,
+            /* D */
+            0% 100%
+            /* E */
+        );
+    border: 2px solid white;
+    background: transparent;
+}
+
+/* Top diagonal AF - default (for laptop) */
+.trapezoid-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 2.5px;
+    height: 48%;
+    background: white;
+    transform: rotate(30deg);
+    transform-origin: top left;
+    z-index: 2;
+}
+
+/* Bottom diagonal CD - default (for laptop) */
+.trapezoid-box .bottom-diagonal {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    width: 2.5px;
+    height: 48%;
+    background: white;
+    transform: rotate(30deg);
+    transform-origin: bottom right;
+    z-index: 2;
+}
+
+/* 📱 Adjust diagonals for mobile */
+@media (max-width: 768px) {
+    .trapezoid-box::after {
+        height: 41%;
+        transform: rotate(6deg);
+        /* adjusted */
+    }
+
+    .trapezoid-box .bottom-diagonal {
+        height: 41%;
+        transform: rotate(6deg);
+        /* adjusted */
+    }
+}
