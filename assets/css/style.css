@@ -114,17 +114,16 @@
     z-index: 2;
 }
 
-/* 📱 Adjust diagonals for mobile */
+/* ✅ MOBILE: Switch to simple rectangle with 4 sides */
 @media (max-width: 768px) {
-    .trapezoid-box::after {
-        height: 41%;
-        transform: rotate(6deg);
-        /* adjusted */
+    .trapezoid-box::before {
+        clip-path: none;
+        border-radius: 0;
+        border: 2px solid white;
     }
 
+    .trapezoid-box::after,
     .trapezoid-box .bottom-diagonal {
-        height: 41%;
-        transform: rotate(6deg);
-        /* adjusted */
+        display: none;
     }
 }
