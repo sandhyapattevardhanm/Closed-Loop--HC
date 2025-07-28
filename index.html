@@ -117,19 +117,18 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <section class="bg-[#0B0F1C] py-16 px-4 sm:px-6 relative overflow-hidden">
+    <!-- Desktop Section (md and above) -->
+    <section class="bg-[#0B0F1C] py-16 px-4 sm:px-6 relative overflow-hidden hidden md:block">
         <div
             class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 group relative z-10">
 
+            <!-- Vision -->
             <div
-                class="relative w-full max-w-[420px] h-[480px] sm:h-[500px] flex flex-col items-center justify-center transition-transform duration-500 md:group-hover:translate-x-8 overflow-hidden rounded-xl z-20">
-
+                class="relative w-full max-w-[420px] h-[480px] sm:h-[500px] flex flex-col items-center justify-center transition-transform duration-500 group-hover:translate-x-8 overflow-hidden rounded-xl z-20">
                 <img src="assets/images/Vector 6.png" alt="Vision Shape"
-                    class="absolute top-1/2 left-1/2 w-[120%] h-[120%] -translate-x-1/2 -translate-y-1/2 object-contain z-0 transition duration-300 md:group-hover:brightness-[1.2] md:group-hover:drop-shadow-[0_0_18px_rgba(140,161,255,0.7)] pointer-events-none" />
-
+                    class="absolute top-1/2 left-1/2 w-[120%] h-[120%] -translate-x-1/2 -translate-y-1/2 object-contain z-0 transition duration-300 group-hover:brightness-[1.2] group-hover:drop-shadow-[0_0_18px_rgba(140,161,255,0.7)] pointer-events-none" />
                 <div class="relative z-10 px-6 text-center text-white flex flex-col justify-center items-center h-full">
-                    <div
-                        class="mb-3 transition duration-300 md:group-hover:drop-shadow-[0_0_20px_rgba(140,161,255,0.8)]">
+                    <div class="mb-3 transition duration-300 group-hover:drop-shadow-[0_0_20px_rgba(140,161,255,0.8)]">
                         <i data-lucide="target" class="w-8 h-8 sm:w-10 sm:h-10 text-white opacity-80"></i>
                     </div>
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 tracking-wide">Our Vision</h2>
@@ -143,18 +142,17 @@
                 </div>
             </div>
 
+            <!-- WOW Symbol -->
             <img src="assets/images/wow-vertical.png" alt="Infinity Symbol"
-                class="absolute top-1/2 left-1/2 w-[80px] sm:w-[100px] md:w-[140px] xl:w-[200px] -translate-x-1/2 -translate-y-1/2 z-30 opacity-0 md:group-hover:opacity-100 transition duration-700 ease-in-out pointer-events-none" />
+                class="absolute top-1/2 left-1/2 w-[80px] sm:w-[100px] md:w-[140px] xl:w-[200px] -translate-x-1/2 -translate-y-1/2 z-30 opacity-0 group-hover:opacity-100 transition duration-700 ease-in-out pointer-events-none" />
 
+            <!-- Mission -->
             <div
-                class="relative w-full max-w-[420px] h-[480px] sm:h-[500px] flex flex-col items-center justify-center transition-transform duration-500 md:group-hover:-translate-x-8 overflow-hidden rounded-xl z-20">
-
+                class="relative w-full max-w-[420px] h-[480px] sm:h-[500px] flex flex-col items-center justify-center transition-transform duration-500 group-hover:-translate-x-8 overflow-hidden rounded-xl z-20">
                 <img src="assets/images/Vector 7.png" alt="Mission Shape"
-                    class="absolute top-1/2 left-1/2 w-[120%] h-[120%] -translate-x-1/2 -translate-y-1/2 object-contain z-0 transition duration-300 md:group-hover:brightness-[1.2] md:group-hover:drop-shadow-[0_0_18px_rgba(140,161,255,0.7)] pointer-events-none" />
-
+                    class="absolute top-1/2 left-1/2 w-[120%] h-[120%] -translate-x-1/2 -translate-y-1/2 object-contain z-0 transition duration-300 group-hover:brightness-[1.2] group-hover:drop-shadow-[0_0_18px_rgba(140,161,255,0.7)] pointer-events-none" />
                 <div class="relative z-10 px-6 text-center text-white flex flex-col justify-center items-center h-full">
-                    <div
-                        class="mb-3 transition duration-300 md:group-hover:drop-shadow-[0_0_20px_rgba(140,161,255,0.8)]">
+                    <div class="mb-3 transition duration-300 group-hover:drop-shadow-[0_0_20px_rgba(140,161,255,0.8)]">
                         <i data-lucide="compass" class="w-8 h-8 sm:w-10 sm:h-10 text-white opacity-80"></i>
                     </div>
                     <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 tracking-wide">Our Mission</h2>
@@ -167,16 +165,76 @@
                     </p>
                 </div>
             </div>
+
         </div>
 
+        <!-- Glow underlay -->
         <div
             class="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-16 bg-gradient-to-r from-blue-500/20 via-white/10 to-blue-500/20 blur-2xl rounded-full opacity-40 pointer-events-none">
         </div>
-
-        <script>
-            lucide.createIcons();
-        </script>
     </section>
+
+    <!-- Mobile Section (below md) -->
+    <section class="bg-[#0B0F1C] py-16 px-4 sm:px-6 relative overflow-hidden md:hidden">
+        <div class="flex flex-col items-center gap-6 relative z-10 group">
+
+            <!-- Vision -->
+            <div
+                class="relative w-full max-w-[360px] h-[420px] flex items-center justify-center overflow-hidden rounded-xl z-20">
+                <img src="assets/images/Vector 6-mob.png" alt="Vision Shape"
+                    class="absolute top-1/2 left-1/2 w-[120%] h-[120%] -translate-x-1/2 -translate-y-1/2 object-contain z-0 transition duration-300 group-hover:brightness-[1.2] group-hover:drop-shadow-[0_0_18px_rgba(140,161,255,0.7)] pointer-events-none" />
+                <div class="relative z-10 px-4 text-center text-white flex flex-col justify-center items-center h-full">
+                    <div class="mb-3 transition duration-300 group-hover:drop-shadow-[0_0_20px_rgba(140,161,255,0.8)]">
+                        <i data-lucide="target" class="w-7 h-7 text-white opacity-80"></i>
+                    </div>
+                    <h2 class="text-2xl font-extrabold mb-3 tracking-wide">Our Vision</h2>
+                    <p class="text-sm leading-relaxed text-gray-300 max-w-[240px]">
+                        Redefining live events by<br />
+                        connecting talent, opportunity,<br />
+                        and audience.<br /><br />
+                        Giving every artist a chance<br />
+                        to grow, collaborate, and succeed.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mission -->
+            <div
+                class="relative w-full max-w-[360px] h-[420px] flex items-center justify-center overflow-hidden rounded-xl z-20">
+                <img src="assets/images/Vector 7-mob.png" alt="Mission Shape"
+                    class="absolute top-1/2 left-1/2 w-[120%] h-[120%] -translate-x-1/2 -translate-y-1/2 object-contain z-0 transition duration-300 group-hover:brightness-[1.2] group-hover:drop-shadow-[0_0_18px_rgba(140,161,255,0.7)] pointer-events-none" />
+                <div class="relative z-10 px-4 text-center text-white flex flex-col justify-center items-center h-full">
+                    <div class="mb-3 transition duration-300 group-hover:drop-shadow-[0_0_20px_rgba(140,161,255,0.8)]">
+                        <i data-lucide="compass" class="w-7 h-7 text-white opacity-80"></i>
+                    </div>
+                    <h2 class="text-2xl font-extrabold mb-3 tracking-wide">Our Mission</h2>
+                    <p class="text-sm leading-relaxed text-gray-300 max-w-[240px]">
+                        Empowering artists through<br />
+                        management, partnerships,<br />
+                        and events.<br /><br />
+                        Delivering seamless experiences<br />
+                        from planning to performance.
+                    </p>
+                </div>
+            </div>
+
+            <!-- WOW Symbol (Mobile Hover) -->
+            <img src="assets/images/wow.png" alt="Infinity Wow"
+                class="absolute top-1/2 left-1/2 w-[360px] max-w-full -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition duration-700 ease-in-out pointer-events-none z-30" />
+
+        </div>
+
+        <!-- Glow underlay -->
+        <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-16 bg-gradient-to-r from-blue-500/20 via-white/10 to-blue-500/20 blur-2xl rounded-full opacity-40 pointer-events-none">
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+
 
     <section class="mt-20 sm:mt-32 px-4 sm:px-12 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row justify-between gap-10">
@@ -326,11 +384,11 @@
     </section>
 
 
-    <section class="bg-[#050B18] py-24 px-6 sm:px-10">
-        <div class="max-w-7xl mx-auto">
+    <section class="bg-[#050B18] py-24 px-6 sm:px-10 overflow-hidden">
+        <div class="max-w-7xl mx-auto relative">
             <!-- Heading -->
-            <div class="text-left max-w-md lg:max-w-lg mb-16">
-                <h2 class="text-4xl md:text-5xl font-semibold text-white mb-6 leading-snug">
+            <div class="text-center max-w-2xl mx-auto mb-20 animate-fade-in-up">
+                <h2 class="text-4xl md:text-5xl font-semibold text-white mb-6 leading-snug transition-all duration-700">
                     Why Choose <span class="text-[#8CA1FF]">ClosedLoop</span>?
                 </h2>
                 <p class="text-white/70 leading-relaxed text-2xl">
@@ -338,121 +396,153 @@
                 </p>
             </div>
 
-            <div class="hidden lg:flex items-center justify-center relative h-[700px]">
-                <!-- Central invisible circle for alignment -->
-                <div class="relative w-[650px] h-[650px]">
+            <!-- Rotating Content Flower -->
+            <div id="flowerWrapper"
+                class="hidden lg:flex items-center justify-center relative h-[850px] group hover:pause-rotation">
+                <div class="relative w-[780px] h-[780px]">
 
-                    <!-- Top Petal -->
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px]">
-                        <img src="assets/images/clover (1) (1).png" class="w-full h-full object-contain"
-                            alt="Top Petal" />
-                        <div class="absolute inset-0 flex items-center justify-center text-center">
-                            <div class="flex flex-col items-center px-3 max-w-[170px]">
-                                <img src="assets/icons/16.png" class="w-8 h-8 mb-2" alt="Elite Talent Networks" />
-                                <h3 class="text-white text-md font-semibold mb-1">Elite Talent Networks</h3>
-                                <p class="text-white/70 text-sm leading-tight">
-                                    Carefully selected performers—vetted for originality, professionalism, and
-                                    event-readiness.
-                                </p>
-                            </div>
-                        </div>
+                    <!-- Center glow -->
+                    <div
+                        class="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#8CA1FF]/20 blur-3xl rounded-full z-0">
                     </div>
 
-                    <!-- Bottom Petal -->
-                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[300px]">
-                        <img src="assets/images/clover (1) (1).png" class="w-full h-full object-contain rotate-180"
-                            alt="Bottom Petal" />
-                        <div class="absolute inset-0 flex items-center justify-center text-center">
-                            <div class="flex flex-col items-center px-3 max-w-[170px]">
-                                <img src="assets/icons/endtoend services.png" class="w-8 h-8 mb-2"
-                                    alt="End-to-End Services" />
-                                <h3 class="text-white text-md font-semibold mb-1">End-to-End Services</h3>
-                                <p class="text-white/70 text-sm leading-tight">
-                                    Artist sourcing, stage production, branding & logistics—handled through one
-                                    integrated approach.
-                                </p>
-                            </div>
-                        </div>
+                    <!-- Petal layout (static) -->
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[360px] h-[360px]">
+                        <img src="assets/images/clover (1) (1).png" class="w-full h-full object-contain drop-shadow-lg"
+                            alt="Top" />
+                        <div class="absolute inset-0 flex items-center justify-center text-center petal-content"
+                            data-index="0"></div>
+                    </div>
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[360px] h-[360px]">
+                        <img src="assets/images/clover (1) (1).png"
+                            class="w-full h-full object-contain rotate-180 drop-shadow-lg" alt="Bottom" />
+                        <div class="absolute inset-0 flex items-center justify-center text-center petal-content"
+                            data-index="1"></div>
+                    </div>
+                    <div class="absolute top-1/2 left-0 -translate-y-1/2 w-[360px] h-[360px]">
+                        <img src="assets/images/clover (1) (1).png"
+                            class="w-full h-full object-contain -rotate-90 drop-shadow-lg" alt="Left" />
+                        <div class="absolute inset-0 flex items-center justify-center text-center petal-content"
+                            data-index="2"></div>
+                    </div>
+                    <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[360px] h-[360px]">
+                        <img src="assets/images/clover (1) (1).png"
+                            class="w-full h-full object-contain rotate-90 drop-shadow-lg" alt="Right" />
+                        <div class="absolute inset-0 flex items-center justify-center text-center petal-content"
+                            data-index="3"></div>
                     </div>
 
-                    <!-- Left Petal -->
-                    <div class="absolute top-1/2 left-0 -translate-y-1/2 w-[300px] h-[300px]">
-                        <img src="assets/images/clover (1) (1).png" class="w-full h-full object-contain -rotate-90"
-                            alt="Left Petal" />
-                        <div class="absolute inset-0 flex items-center justify-center text-center">
-                            <div class="flex flex-col items-center px-3 max-w-[170px]">
-                                <img src="assets/icons/a passionate team.png" class="w-8 h-8 mb-2"
-                                    alt="Creative Passion" />
-                                <h3 class="text-white text-md font-semibold mb-1">Creative Passion</h3>
-                                <p class="text-white/70 text-sm leading-tight">
-                                    Personalized experiences delivered with impact and soul—fully aligned to your
-                                    vision.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Petal -->
-                    <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[300px] h-[300px]">
-                        <img src="assets/images/clover (1) (1).png" class="w-full h-full object-contain rotate-90"
-                            alt="Right Petal" />
-                        <div class="absolute inset-0 flex items-center justify-center text-center">
-                            <div class="flex flex-col items-center px-3 max-w-[170px]">
-                                <img src="assets/icons/diverse events.png" class="w-8 h-8 mb-2"
-                                    alt="Diverse Event Expertise" />
-                                <h3 class="text-white text-md font-semibold mb-1">Diverse Expertise</h3>
-                                <p class="text-white/70 text-sm leading-tight">
-                                    From launches to weddings, our hands-on planning ensures flawless execution.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lg:hidden flex flex-col items-center gap-14 relative mt-10">
-                <div class="absolute top-0 left-1/2 w-1 h-full bg-gradient-to-b from-[#8CA1FF]/30 to-transparent z-0">
-                </div>
-
-                <!-- Bubble Items -->
-                <div
-                    class="relative z-10 bg-gradient-to-br from-[#1d2b4f] to-[#27385f] rounded-full w-64 h-64 flex flex-col items-center justify-center text-center shadow-xl border-2 border-white/10">
-                    <img src="assets/icons/16.png" class="w-10 h-10 mb-3" alt="Elite Talent" />
-                    <h3 class="text-white text-lg font-semibold mb-1">Elite Talent Networks</h3>
-                    <p class="text-white/70 text-sm px-4 leading-tight">
-                        Carefully selected performers—vetted for originality, professionalism, and event-readiness.
-                    </p>
-                </div>
-
-                <div
-                    class="relative z-10 bg-gradient-to-br from-[#1c2a4c] to-[#243a5e] rounded-full w-64 h-64 flex flex-col items-center justify-center text-center shadow-xl border-2 border-white/10">
-                    <img src="assets/icons/endtoend services.png" class="w-10 h-10 mb-3" alt="End-to-End" />
-                    <h3 class="text-white text-lg font-semibold mb-1">End-to-End Services</h3>
-                    <p class="text-white/70 text-sm px-4 leading-tight">
-                        Artist sourcing, stage production, branding & logistics—handled through one integrated approach.
-                    </p>
-                </div>
-
-                <div
-                    class="relative z-10 bg-gradient-to-br from-[#202f50] to-[#2a4166] rounded-full w-64 h-64 flex flex-col items-center justify-center text-center shadow-xl border-2 border-white/10">
-                    <img src="assets/icons/a passionate team.png" class="w-10 h-10 mb-3" alt="Creative Passion" />
-                    <h3 class="text-white text-lg font-semibold mb-1">Creative Passion</h3>
-                    <p class="text-white/70 text-sm px-4 leading-tight">
-                        Personalized experiences delivered with impact and soul—fully aligned to your vision.
-                    </p>
-                </div>
-
-                <div
-                    class="relative z-10 bg-gradient-to-br from-[#1d2d54] to-[#2d4870] rounded-full w-64 h-64 flex flex-col items-center justify-center text-center shadow-xl border-2 border-white/10">
-                    <img src="assets/icons/diverse events.png" class="w-10 h-10 mb-3" alt="Diverse Expertise" />
-                    <h3 class="text-white text-lg font-semibold mb-1">Diverse Expertise</h3>
-                    <p class="text-white/70 text-sm px-4 leading-tight">
-                        From launches to weddings, our hands-on planning ensures flawless execution.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
+    <script>
+        const petalContents = [
+            {
+                icon: "assets/icons/16.png",
+                title: "Elite Talent Networks",
+                text: "Carefully selected performers—vetted for originality, professionalism, and event-readiness.",
+            },
+            {
+                icon: "assets/icons/endtoend services.png",
+                title: "End-to-End Services",
+                text: "Artist sourcing, stage production, branding & logistics—handled through one integrated approach.",
+            },
+            {
+                icon: "assets/icons/a passionate team.png",
+                title: "Creative Passion",
+                text: "Personalized experiences delivered with impact and soul—fully aligned to your vision.",
+            },
+            {
+                icon: "assets/icons/diverse events.png",
+                title: "Diverse Expertise",
+                text: "From launches to weddings, our hands-on planning ensures flawless execution.",
+            },
+        ];
+
+        const petals = document.querySelectorAll(".petal-content");
+        let currentOffset = 0;
+        let interval;
+
+        function updatePetals() {
+            petals.forEach((el, idx) => {
+                const contentIndex = (idx + currentOffset) % petalContents.length;
+                const content = petalContents[contentIndex];
+                el.innerHTML = `
+        <div class="flex flex-col items-center px-4 max-w-[190px] transition-all duration-500">
+          <img src="${content.icon}" class="w-10 h-10 mb-2" alt="${content.title}" />
+          <h3 class="text-white text-md font-semibold mb-1">${content.title}</h3>
+          <p class="text-white/70 text-sm leading-tight">${content.text}</p>
+        </div>
+      `;
+            });
+        }
+
+        function startRotation() {
+            interval = setInterval(() => {
+                currentOffset = (currentOffset + 1) % petalContents.length;
+                updatePetals();
+            }, 3000);
+        }
+
+        function stopRotation() {
+            clearInterval(interval);
+        }
+
+        const wrapper = document.getElementById("flowerWrapper");
+        wrapper.addEventListener("mouseenter", stopRotation);
+        wrapper.addEventListener("mouseleave", startRotation);
+
+        updatePetals(); // initial load
+        startRotation(); // begin loop
+    </script>
+
+
+    <!-- Mobile Version (unchanged but cleaned spacing slightly) -->
+    <div class="lg:hidden flex flex-col items-center gap-14 relative mt-10">
+        <div class="absolute top-0 left-1/2 w-1 h-full bg-gradient-to-b from-[#8CA1FF]/30 to-transparent z-0">
+        </div>
+
+        <!-- Repeat bubble blocks -->
+        <div
+            class="relative z-10 bg-gradient-to-br from-[#1d2b4f] to-[#27385f] rounded-full w-64 h-64 flex flex-col items-center justify-center text-center shadow-xl border-2 border-white/10">
+            <img src="assets/icons/16.png" class="w-10 h-10 mb-3" alt="Elite Talent" />
+            <h3 class="text-white text-lg font-semibold mb-1">Elite Talent Networks</h3>
+            <p class="text-white/70 text-sm px-4 leading-tight">
+                Carefully selected performers—vetted for originality, professionalism, and event-readiness.
+            </p>
+        </div>
+
+        <div
+            class="relative z-10 bg-gradient-to-br from-[#1c2a4c] to-[#243a5e] rounded-full w-64 h-64 flex flex-col items-center justify-center text-center shadow-xl border-2 border-white/10">
+            <img src="assets/icons/endtoend services.png" class="w-10 h-10 mb-3" alt="End-to-End" />
+            <h3 class="text-white text-lg font-semibold mb-1">End-to-End Services</h3>
+            <p class="text-white/70 text-sm px-4 leading-tight">
+                Artist sourcing, stage production, branding & logistics—handled through one integrated approach.
+            </p>
+        </div>
+
+        <div
+            class="relative z-10 bg-gradient-to-br from-[#202f50] to-[#2a4166] rounded-full w-64 h-64 flex flex-col items-center justify-center text-center shadow-xl border-2 border-white/10">
+            <img src="assets/icons/a passionate team.png" class="w-10 h-10 mb-3" alt="Creative Passion" />
+            <h3 class="text-white text-lg font-semibold mb-1">Creative Passion</h3>
+            <p class="text-white/70 text-sm px-4 leading-tight">
+                Personalized experiences delivered with impact and soul—fully aligned to your vision.
+            </p>
+        </div>
+
+        <div
+            class="relative z-10 bg-gradient-to-br from-[#1d2d54] to-[#2d4870] rounded-full w-64 h-64 flex flex-col items-center justify-center text-center shadow-xl border-2 border-white/10">
+            <img src="assets/icons/diverse events.png" class="w-10 h-10 mb-3" alt="Diverse Expertise" />
+            <h3 class="text-white text-lg font-semibold mb-1">Diverse Expertise</h3>
+            <p class="text-white/70 text-sm px-4 leading-tight">
+                From launches to weddings, our hands-on planning ensures flawless execution.
+            </p>
+        </div>
+    </div>
+    </div>
+    </section>
+
 
     <!-- Footer -->
     <footer class="text-white w-full pt-16 pb-6 font-poppins bg-[#0B0B0B] text-[17px]">
