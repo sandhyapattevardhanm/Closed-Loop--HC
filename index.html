@@ -9,6 +9,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="assets/css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
@@ -25,33 +27,39 @@
         class="fixed top-0 left-0 w-full h-full object-cover z-0 pointer-events-none" />
 
     <header x-data="{ open: false }"
-        class="relative z-10 w-full max-w-7xl mx-auto mt-8 px-4 sm:px-6 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md">
+        class="relative z-50 w-full max-w-7xl mx-auto mt-8 px-4 sm:px-6 flex justify-between items-center border border-white/30 rounded-full bg-white/5 backdrop-blur-md shadow-sm">
+
+        <!-- Logo -->
         <div class="text-white font-semibold text-[26px] font-montserrat-alt">
             <img src="assets/images/logo.png" class="w-16 h-14" alt="Logo" />
         </div>
 
-        <div class="hidden md:flex items-center space-x-16">
-            <nav class="flex items-center space-x-12 pr-16 mr-16 text-[20px] font-light relative">
-                <div class="relative flex items-center">
-                    <a href="index.html" class="text-white hover:text-gray-300">Home</a>
-                    <span class="absolute bottom-[-14px] left-0 w-full h-[2px] bg-white rounded-full"></span>
+        <!-- Nav + Contact (Desktop) -->
+        <div class="hidden md:flex items-center justify-center flex-1 space-x-16">
+            <nav class="flex items-center space-x-12 text-[18px] font-light text-white">
+                <div class="relative">
+                    <a href="index.html" class="hover:text-gray-300 transition">Home</a>
+                    <span class="absolute bottom-[-6px] left-0 w-full h-[2px] bg-white rounded-full"></span>
                 </div>
-                <a href="about.html" class="text-white hover:text-gray-300">About</a>
-                <a href="services.html" class="text-white hover:text-gray-300">Services</a>
-                <a href="#" class="text-white hover:text-gray-300">Tickets</a>
+                <a href="about.html" class="hover:text-gray-300 transition">About</a>
+                <a href="services.html" class="hover:text-gray-300 transition">Services</a>
+                <a href="#" class="hover:text-gray-300 transition">Tickets</a>
             </nav>
-            <div class="relative">
-                <div
-                    class="pl-8 pr-20 py-3.5 flex items-center text-[20px] font-light text-white rounded-full bg-white/20 backdrop-blur-md hover:bg-white/30 transition relative z-10">
-                    <a href="contact.html">Contact us</a>
-                </div>
-                <div
-                    class="absolute right-1 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white flex items-center justify-center z-20">
-                    <img src="assets/images/arrow.png" alt="arrow" class="h-6 w-6 transform rotate-10" />
-                </div>
+        </div>
+
+        <!-- Contact Button (Desktop Only) -->
+        <div class="hidden md:block ml-auto relative">
+            <div
+                class="pl-8 pr-20 py-3.5 flex items-center text-[18px] font-light text-white rounded-full bg-white/20 backdrop-blur-md hover:bg-white/30 transition relative z-10">
+                <a href="contact.html">Contact us</a>
+            </div>
+            <div
+                class="absolute right-1 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white flex items-center justify-center z-20">
+                <img src="assets/images/arrow.png" alt="arrow" class="h-6 w-6 transform rotate-10" />
             </div>
         </div>
 
+        <!-- Hamburger (Mobile) -->
         <button @click="open = !open" class="md:hidden z-50 relative">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -59,15 +67,20 @@
             </svg>
         </button>
 
+        <!-- Mobile Menu -->
         <div x-show="open" x-transition @click.outside="open = false"
-            class="absolute top-full right-4 w-4/5 max-w-xs bg-[#020916] border border-blue-500 rounded-2xl mt-2 px-6 py-4 space-y-4 text-white text-[18px] font-light md:hidden z-50">
+            class="absolute top-full left-0 w-full mt-4 px-6 py-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg space-y-4 text-white text-[18px] font-light md:hidden">
             <a href="index.html" class="block hover:text-gray-300">Home</a>
             <a href="about.html" class="block hover:text-gray-300">About</a>
             <a href="services.html" class="block hover:text-gray-300">Services</a>
             <a href="#" class="block hover:text-gray-300">Tickets</a>
-            <a href="contact.html" class="block hover:text-gray-300">Contact Us</a>
+            <a href="contact.html"
+                class="block bg-[#8CA1FF] text-black text-center py-2 rounded-full font-semibold hover:bg-white transition">
+                Contact Us
+            </a>
         </div>
     </header>
+
 
     <section
         class="relative z-10 flex flex-col items-center justify-center text-center mt-20 sm:mt-32 px-4 sm:px-6 fade-in">
@@ -77,23 +90,30 @@
                 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[90%]" />
         </div>
 
-        <p class="mt-6 max-w-md sm:max-w-xl text-xs sm:text-base text-gray-300 leading-relaxed px-2">
-            We’re an established, sustainable and smart transport agency dedicated to delivering tomorrow’s travel.
-            Join us today, a tribute to future generations.
-        </p>
-
         <div
-            class="mt-6 sm:mt-10 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 w-full sm:w-auto px-4">
-            <a href="#"
-                class="w-full sm:w-auto text-center px-6 py-2.5 rounded-full bg-white text-black font-semibold button-hover transition text-sm sm:text-base button-fix">
-                Book Tickets
-            </a>
-            <a href="#"
-                class="w-full sm:w-auto text-center px-6 py-2.5 rounded-full border border-white hover:bg-white hover:text-black button-hover transition text-sm sm:text-base button-fix">
-                Watch
-            </a>
+            class="mt-10 w-full flex flex-col sm:flex-row items-center sm:items-start justify-between px-4 sm:px-12 gap-6">
+            <!-- Paragraph aligned left -->
+            <p class="text-xs sm:text-base text-gray-300 leading-relaxed max-w-md text-left">
+                We’re an established, sustainable and smart transport agency dedicated to delivering tomorrow’s travel.
+                Join us today, a tribute to future generations.
+            </p>
+
+            <!-- Buttons aligned right -->
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a href="#"
+                    class="relative px-6 py-2.5 text-white font-medium text-sm sm:text-base rounded-xl border border-white/20 bg-white/10 backdrop-blur-md shadow-lg transform -skew-x-12 hover:bg-white/20 transition duration-300"
+                    style="box-shadow: 0 0 15px rgba(0, 162, 255, 0.3);">
+                    <span class="inline-block transform skew-x-12">Book Tickets</span>
+                </a>
+
+                <a href="#"
+                    class="relative px-6 py-2.5 text-white font-medium text-sm sm:text-base rounded-xl border border-white/20 bg-white/5 backdrop-blur-md shadow-lg transform -skew-x-12 hover:bg-white/10 transition duration-300"
+                    style="box-shadow: 0 0 10px rgba(0, 162, 255, 0.2);">
+                    <span class="inline-block transform skew-x-12">Watch</span>
+                </a>
+            </div>
         </div>
-    </section>
+    </section><br>
 
     <script src="https://unpkg.com/lucide@latest"></script>
 
