@@ -6,14 +6,9 @@
     margin-top: -40px;
 
     clip-path: polygon(30% 0%,
-            /* Top-left */
             100% 0%,
-            /* Top-right */
             100% 60%,
-            /* Bottom-right */
-            0% 60%
-            /* Bottom-left */
-        );
+            0% 60%);
 
     shape-outside: polygon(30% 0%,
             100% 0%,
@@ -42,18 +37,11 @@
     background: transparent;
     color: white;
     clip-path: polygon(0% 40%,
-            /* Point 1: top-left start of diagonal */
             10% 0%,
-            /* Point 2: actual top-left corner */
             100% 0%,
-            /* Point 3: top-right */
             100% 60%,
-            /* Point 4: bottom-right corner before diagonal */
             90% 100%,
-            /* Point 5: actual bottom-right diagonal tip */
-            0% 100%
-            /* Point 6: bottom-left */
-        );
+            0% 100%);
     border: 2px solid white;
     padding: 2rem;
 }
@@ -63,30 +51,21 @@
     z-index: 1;
 }
 
-/* Main 6-sided border */
 .trapezoid-box::before {
     content: '';
     position: absolute;
     inset: 0;
     z-index: -1;
     clip-path: polygon(0% 42%,
-            /* F */
             10% 0%,
-            /* A */
             100% 0%,
-            /* B */
             100% 58%,
-            /* C */
             90% 100%,
-            /* D */
-            0% 100%
-            /* E */
-        );
+            0% 100%);
     border: 2px solid white;
     background: transparent;
 }
 
-/* Top diagonal AF - default (for laptop) */
 .trapezoid-box::after {
     content: '';
     position: absolute;
@@ -100,7 +79,6 @@
     z-index: 2;
 }
 
-/* Bottom diagonal CD - default (for laptop) */
 .trapezoid-box .bottom-diagonal {
     content: '';
     position: absolute;
@@ -114,7 +92,6 @@
     z-index: 2;
 }
 
-/* ✅ MOBILE: Switch to simple rectangle with 4 sides */
 @media (max-width: 768px) {
     .trapezoid-box::before {
         clip-path: none;
