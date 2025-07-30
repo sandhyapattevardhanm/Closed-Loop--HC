@@ -67,22 +67,22 @@
 
 
     <!-- Offer Section -->
-    <section class="w-screen mt-40 mb-10 flex flex-col lg:flex-row items-stretch px-1 gap-20">
+    <section class="w-screen mt-10 mb-10 flex flex-col lg:flex-row items-stretch px-1">
         <!-- Left Side -->
-        <div class="relative w-full h-full">
-            <!-- Full-width image pulled to left edge -->
-            <img src="assets/images/Group.png" alt="Decorative Image"
-                class="absolute left-[-40px] top-0 w-[400px] h-auto object-cover z-0" />
+        <div class="relative w-full lg:w-1/2 h-[600px] flex items-center justify-center">
+            <!-- Background Image -->
+            <img src="assets/images/Group.png" alt="Bg circle group Image"
+                class="absolute top-0 left-0 w-[550px] h-auto object-cover z-0 filter brightness-200" />
 
-            <!-- Text Content -->
-            <div class="relative z-10 flex flex-col justify-center h-full pl-20 py-8 backdrop-brightness-100">
+            <!-- Text Content centered vertically -->
+            <div class="relative z-10 flex flex-col justify-center items-start max-w-2xl px-10 py-8">
                 <h2 class="text-[#d5e3ff] text-5xl font-bold mb-3">What</h2>
                 <h3 class="text-[#aeb3c6] text-3xl font-light mb-8">We Offer</h3>
-                <p class="text-white text-xl leading-relaxed mb-5">
+                <p class="text-gray-400 text-lg font-light leading-relaxed mb-5">
                     At Closed Loop, we provide a fully integrated suite of services designed to support artists, brands,
                     and event organisers at every stage of their journey.
                 </p>
-                <p class="text-white text-xl leading-relaxed mb-5">
+                <p class="text-gray-400 text-lg font-light leading-relaxed mb-5">
                     Whether you're a rising talent or an established name, we create a continuous loop of creative
                     growth, visibility, and opportunity.
                 </p>
@@ -90,37 +90,56 @@
         </div>
 
         <!-- Right Side -->
-        <div class="w-full lg:w-1/2 flex items-center justify-center p-8">
-            <img src="assets/images/wow.png" alt="Infinity" class="w-full max-w-md opacity-90" />
+        <div class="w-full lg:w-1/2 flex items-center justify-center p-5">
+            <img src="assets/images/wow.png" alt="Infinity" class="w-full max-w-lg opacity-90" />
         </div>
     </section>
 
 
 
     <!-- Why choose us Section -->
-    <section class="text-white px-10 py-8">
+    <section class="text-white px-1 py-8">
         <h2 class="text-3xl pl-10 font-semibold mb-6">Why Choose Us?</h2>
-        <div
-            class="flex items-center justify-between bg-white/30 border border-gray-500 rounded-full px-10 py-3 text-md md:text-lg w-full max-w-7xl mx-auto">
-            <!-- First Dot -->
-            <span class="text-gray-300 text-3xl">•</span>
 
-            <!-- Items with dots in between -->
-            <div class="flex items-center space-x-16">
-                <span>Proven track record</span>
+        <!-- Wrapper with responsive layout -->
+        <div class="bg-white/20 border border-gray-500 rounded-full px-10 py-3 text-md md:text-lg w-full mx-auto">
+
+            <!-- For large screens -->
+            <div class="hidden lg:flex items-center justify-between">
                 <span class="text-gray-300 text-3xl">•</span>
-                <span>Industry expertise</span>
+                <div class="flex items-center space-x-20">
+                    <span>Proven track record</span>
+                    <span class="text-gray-300 text-3xl">•</span>
+                    <span>Industry expertise</span>
+                    <span class="text-gray-300 text-3xl">•</span>
+                    <span>Personalized approach</span>
+                    <span class="text-gray-300 text-3xl">•</span>
+                    <span>End-to-end support</span>
+                </div>
                 <span class="text-gray-300 text-3xl">•</span>
-                <span>Personalized approach</span>
-                <span class="text-gray-300 text-3xl">•</span>
-                <span>End-to-end support</span>
             </div>
 
-            <!-- Last Dot -->
-            <span class="text-gray-300 text-3xl">•</span>
+            <!-- For medium and small screens -->
+            <div class="flex flex-wrap gap-4 justify-center lg:hidden text-center">
+                <div class="flex items-center justify-center w-full sm:w-full md:w-[48%] space-x-2">
+                    <span class="text-gray-300 text-2xl">•</span>
+                    <span>Proven track record</span>
+                </div>
+                <div class="flex items-center justify-center w-full sm:w-full md:w-[48%] space-x-2">
+                    <span class="text-gray-300 text-2xl">•</span>
+                    <span>Industry expertise</span>
+                </div>
+                <div class="flex items-center justify-center w-full sm:w-full md:w-[48%] space-x-2">
+                    <span class="text-gray-300 text-2xl">•</span>
+                    <span>Personalized approach</span>
+                </div>
+                <div class="flex items-center justify-center w-full sm:w-full md:w-[48%] space-x-2">
+                    <span class="text-gray-300 text-2xl">•</span>
+                    <span>End-to-end support</span>
+                </div>
+            </div>
         </div>
     </section>
-
 
 
     <!--Services section-->
