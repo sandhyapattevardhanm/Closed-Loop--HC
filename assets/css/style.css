@@ -32,75 +32,70 @@
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
-.custom-trapezoid-border {
-    position: relative;
-    background: transparent;
-    color: white;
-    clip-path: polygon(0% 40%,
-            10% 0%,
-            100% 0%,
-            100% 60%,
-            90% 100%,
-            0% 100%);
-    border: 2px solid white;
-    padding: 2rem;
-}
-
 .trapezoid-box {
     position: relative;
     z-index: 1;
 }
 
+/* 🔷 Default: Rectangle for all screens < 1200px */
 .trapezoid-box::before {
     content: '';
     position: absolute;
     inset: 0;
     z-index: -1;
-    clip-path: polygon(0% 42%,
-            10% 0%,
-            100% 0%,
-            100% 58%,
-            90% 100%,
-            0% 100%);
-    border: 2px solid white;
     background: transparent;
+    border: 2px solid white;
+    border-radius: 0;
+    clip-path: none;
 }
 
-.trapezoid-box::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 10%;
-    width: 2.5px;
-    height: 48%;
-    background: white;
-    transform: rotate(30deg);
-    transform-origin: top left;
-    z-index: 2;
-}
-
+.trapezoid-box::after,
 .trapezoid-box .bottom-diagonal {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 10%;
-    width: 2.5px;
-    height: 48%;
-    background: white;
-    transform: rotate(30deg);
-    transform-origin: bottom right;
-    z-index: 2;
+    display: none;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1200px) {
     .trapezoid-box::before {
-        clip-path: none;
-        border-radius: 0;
-        border: 2px solid white;
+        clip-path: polygon(0% 42%,
+                /* F */
+                10% 0%,
+                /* A */
+                100% 0%,
+                /* B */
+                100% 58%,
+                /* C */
+                90% 100%,
+                /* D */
+                0% 100%
+                /* E */
+            );
     }
 
-    .trapezoid-box::after,
+    .trapezoid-box::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 10%;
+        width: 2.5px;
+        height: 48%;
+        background: white;
+        transform: rotate(30deg);
+        transform-origin: top left;
+        z-index: 2;
+        display: block;
+    }
+
     .trapezoid-box .bottom-diagonal {
-        display: none;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 10%;
+        width: 2.5px;
+        height: 48%;
+        background: white;
+        transform: rotate(30deg);
+        transform-origin: bottom right;
+        z-index: 2;
+        display: block;
     }
 }
