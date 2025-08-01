@@ -31,8 +31,6 @@
 </head>
 
 <body class="text-white text-[17px] relative overflow-x-hidden">
-    <img src="assets/images/waves.png" alt="Waves Background"
-        class="fixed top-0 left-0 w-full h-full object-cover z-0 pointer-events-none" />
 
     <!-- Header -->
     <header x-data="{ open: false }"
@@ -81,8 +79,10 @@
 
 
     <section
-        class="relative z-10 flex flex-col items-center justify-center text-center mt-20 sm:mt-32 px-4 sm:px-6 fade-in">
-        <div class="relative w-full max-w-[320px] sm:max-w-[500px] scale-hover">
+        class="relative z-10 w-full min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 fade-in"
+        style="background-image: url('assets/images/waves.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+        <div class="relative w-full max-w-[320px] sm:max-w-[500px] scale-hover mt-20 sm:mt-32">
             <img src="assets/images/infinity.png" alt="Infinity Loop" class="w-full h-auto" />
             <img src="assets/images/ClosedLoop.png" alt="ClosedLoop Logo"
                 class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] sm:w-[90%]" />
@@ -90,6 +90,7 @@
 
         <div
             class="mt-10 w-full flex flex-col sm:flex-row items-center sm:items-start justify-between px-4 sm:px-12 gap-6">
+
             <!-- Paragraph aligned left -->
             <p class="text-xs sm:text-base text-gray-300 leading-relaxed max-w-md text-left">
                 We’re an established, sustainable and smart transport agency dedicated to delivering tomorrow’s travel.
@@ -111,20 +112,27 @@
                 </a>
             </div>
         </div>
-    </section><br>
+    </section>
+
 
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Desktop Section (md and above) -->
-    <section class="bg-[#0B0F1C] py-16 px-4 sm:px-6 relative overflow-hidden hidden md:block">
+    <section class="py-16 px-4 sm:px-6 relative overflow-hidden hidden md:block"
+        style="background-image: url('assets/images/vision-mission.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+        <!-- Bottom-left Overlay Image -->
+        <img src="assets/images/Group 1000001797.png" alt="Overlay Decoration"
+            class="absolute bottom-0 left-0 w-[180px] sm:w-[240px] md:w-[280px] lg:w-[320px] z-0 pointer-events-none" />
+
         <div
             class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10 group relative z-10">
 
-            <!-- Vision -->
+            <!-- Vision Card -->
             <div
-                class="relative w-full max-w-[420px] h-[480px] sm:h-[500px] flex flex-col items-center justify-center transition-transform duration-500 group-hover:translate-x-8 overflow-hidden rounded-xl z-20">
+                class="relative w-full max-w-[420px] h-[500px] flex flex-col items-center justify-center transition-transform duration-500 group-hover:translate-x-8 overflow-hidden rounded-xl z-20">
                 <img src="assets/images/Vector 6.png" alt="Vision Shape"
-                    class="absolute top-1/2 left-1/2 w-[120%] h-[120%] -translate-x-1/2 -translate-y-1/2 object-contain z-0 transition duration-300 group-hover:brightness-[1.2] group-hover:drop-shadow-[0_0_18px_rgba(140,161,255,0.7)] pointer-events-none" />
+                    class="absolute top-1/2 left-1/2 w-[106%] h-[106%] -translate-x-1/2 -translate-y-1/2 object-contain z-0 transition duration-300 group-hover:brightness-[1.2] group-hover:drop-shadow-[0_0_18px_rgba(140,161,255,0.7)] pointer-events-none" />
                 <div class="relative z-10 px-6 text-center text-white flex flex-col justify-center items-center h-full">
                     <div class="mb-3 transition duration-300 group-hover:drop-shadow-[0_0_20px_rgba(140,161,255,0.8)]">
                         <i data-lucide="target" class="w-8 h-8 sm:w-10 sm:h-10 text-white opacity-80"></i>
@@ -144,11 +152,11 @@
             <img src="assets/images/wow-vertical.png" alt="Infinity Symbol"
                 class="absolute top-1/2 left-1/2 w-[80px] sm:w-[100px] md:w-[140px] xl:w-[200px] -translate-x-1/2 -translate-y-1/2 z-30 opacity-0 group-hover:opacity-100 transition duration-700 ease-in-out pointer-events-none" />
 
-            <!-- Mission -->
+            <!-- Mission Card -->
             <div
-                class="relative w-full max-w-[420px] h-[480px] sm:h-[500px] flex flex-col items-center justify-center transition-transform duration-500 group-hover:-translate-x-8 overflow-hidden rounded-xl z-20">
+                class="relative w-full max-w-[420px] h-[500px] flex flex-col items-center justify-center transition-transform duration-500 group-hover:-translate-x-8 overflow-hidden rounded-xl z-20">
                 <img src="assets/images/Vector 7.png" alt="Mission Shape"
-                    class="absolute top-1/2 left-1/2 w-[120%] h-[120%] -translate-x-1/2 -translate-y-1/2 object-contain z-0 transition duration-300 group-hover:brightness-[1.2] group-hover:drop-shadow-[0_0_18px_rgba(140,161,255,0.7)] pointer-events-none" />
+                    class="absolute top-1/2 left-1/2 w-[90%] h-[90%] -translate-x-1/2 -translate-y-1/2 object-contain z-0 transition duration-300 group-hover:brightness-[1.2] group-hover:drop-shadow-[0_0_18px_rgba(140,161,255,0.7)] pointer-events-none" />
                 <div class="relative z-10 px-6 text-center text-white flex flex-col justify-center items-center h-full">
                     <div class="mb-3 transition duration-300 group-hover:drop-shadow-[0_0_20px_rgba(140,161,255,0.8)]">
                         <i data-lucide="compass" class="w-8 h-8 sm:w-10 sm:h-10 text-white opacity-80"></i>
@@ -163,7 +171,6 @@
                     </p>
                 </div>
             </div>
-
         </div>
 
         <!-- Glow underlay -->
@@ -172,8 +179,10 @@
         </div>
     </section>
 
+
+
     <!-- Mobile Section (below md) -->
-    <section class="bg-[#0B0F1C] py-16 px-4 sm:px-6 relative overflow-hidden md:hidden">
+    <section class=" py-16 px-4 sm:px-6 relative overflow-hidden md:hidden">
         <div class="flex flex-col items-center gap-6 relative z-10 group">
 
             <!-- Vision -->
@@ -231,83 +240,101 @@
     <script>
         lucide.createIcons();
     </script>
-    <section class="mt-20 sm:mt-32 px-4 sm:px-12 max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between gap-10">
+    <section class="mt-20 px-4 sm:px-12 max-w-7xl mx-auto text-white relative bg-cover bg-center bg-no-repeat"
+        style="background-image: url('assets/images/our core values.png');">
 
+        <div class="flex flex-col md:flex-row gap-10 py-12">
+            <!-- Left Text Content -->
             <div class="flex-1">
-                <h2 class="text-white text-3xl sm:text-4xl md:text-5xl font-semibold leading-snug">
+                <h2 class="text-4xl md:text-5xl font-bold leading-snug">
                     Our <br />
                     <span class="text-gray-400 font-normal">Core Values</span>
                 </h2>
-                <p class="mt-6 text-gray-400 text-lg sm:text-2xl leading-relaxed max-w-sm">
+                <p class="mt-6 text-gray-300 text-lg sm:text-2xl leading-relaxed max-w-sm">
                     The principles that guide everything we do, from artist relationships to audience experiences.
                 </p>
             </div>
 
-            <div class="relative flex-1 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-12 mt-10 md:mt-0">
+            <!-- Right Cards Section -->
+            <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-8 relative">
+                <!-- Column 1 -->
+                <div class="flex flex-col gap-8">
+                    <!-- Creativity -->
+                    <div
+                        class="bg-[#111827]/80 rounded-2xl p-6 text-center border border-white/10 transition duration-300 hover:border-blue-500 hover:shadow-[0_0_25px_#3b82f6] group">
+                        <img src="assets/icons/creativity.png"
+                            class="mx-auto w-16 mb-4 transition-transform duration-700 group-hover:rotate-[360deg]"
+                            alt="Creativity" />
+                        <h3 class="text-xl font-bold mb-2">Creativity</h3>
+                        <p class="text-gray-300 text-base leading-relaxed">
+                            Innovation is at our core—we thrive on bold ideas and unforgettable experiences. We aim to
+                            create entertainment that becomes a lasting memory.
+                        </p>
+                    </div>
 
-                <div
-                    class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white min-h-[260px] flex flex-col items-center justify-start transition duration-300 hover:shadow-[0_0_20px_rgba(140,161,255,0.4)] hover:border-[#8CA1FF] group">
-                    <img src="assets/icons/creativity.png" alt="Creativity"
-                        class="mb-4 w-14 transition-transform duration-500 group-hover:rotate-[360deg]" />
-                    <h3 class="text-xl font-semibold mb-2">Creativity</h3>
-                    <p class="text-sm sm:text-[15px] text-gray-300 leading-relaxed">
-                        Innovation is at our core—we thrive on bold ideas and unforgettable experiences. We aim to
-                        create entertainment that becomes a lasting memory.
-                    </p>
+                    <!-- Excellence -->
+                    <div
+                        class="bg-[#111827]/80 rounded-2xl p-6 text-center border border-white/10 transition duration-300 hover:border-blue-500 hover:shadow-[0_0_25px_#3b82f6] group">
+                        <img src="assets/icons/excellence.png"
+                            class="mx-auto w-16 mb-4 transition-transform duration-700 group-hover:rotate-[360deg]"
+                            alt="Excellence" />
+                        <h3 class="text-xl font-bold mb-2">Excellence</h3>
+                        <p class="text-gray-300 text-base leading-relaxed">
+                            Excellence is our mindset—reflected in every detail, from planning to performance. We aim to
+                            exceed.
+                        </p>
+                    </div>
+
+                    <!-- Collaboration -->
+                    <div
+                        class="bg-[#111827]/80 rounded-2xl p-6 text-center border border-white/10 transition duration-300 hover:border-blue-500 hover:shadow-[0_0_25px_#3b82f6] group">
+                        <img src="assets/icons/collaboration.png"
+                            class="mx-auto w-16 mb-4 transition-transform duration-700 group-hover:rotate-[360deg]"
+                            alt="Collaboration" />
+                        <h3 class="text-xl font-bold mb-2">Collaboration</h3>
+                        <p class="text-gray-300 text-base leading-relaxed">
+                            We believe success is built together. Through global partnerships, we drive shared growth
+                            and make the world feel more connected.
+                        </p>
+                    </div>
                 </div>
 
-                <div
-                    class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white min-h-[260px] flex flex-col items-center justify-start transition duration-300 hover:shadow-[0_0_20px_rgba(140,161,255,0.4)] hover:border-[#8CA1FF] group">
-                    <img src="assets/icons/excellence.png" alt="Excellence"
-                        class="mb-4 w-14 transition-transform duration-500 group-hover:rotate-[360deg]" />
-                    <h3 class="text-xl font-semibold mb-2">Excellence</h3>
-                    <p class="text-sm sm:text-[15px] text-gray-300 leading-relaxed">
-                        Excellence is our mindset—reflected in every detail, from planning to performance. We aim to
-                        exceed.
-                    </p>
-                </div>
+                <!-- Column 2 (Staggered) -->
+                <div class="flex flex-col gap-8 mt-16">
+                    <!-- Integrity -->
+                    <div
+                        class="bg-[#111827]/80 rounded-2xl p-6 text-center border border-white/10 transition duration-300 hover:border-blue-500 hover:shadow-[0_0_25px_#3b82f6] group">
+                        <img src="assets/icons/integrity.png"
+                            class="mx-auto w-16 mb-4 transition-transform duration-700 group-hover:rotate-[360deg]"
+                            alt="Integrity" />
+                        <h3 class="text-xl font-bold mb-2">Integrity</h3>
+                        <p class="text-gray-300 text-base leading-relaxed">
+                            We value transparency, trust, and professionalism in every partnership. Artists are
+                            empowered to express themselves authentically and freely.
+                        </p>
+                    </div>
 
-                <div
-                    class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white min-h-[260px] flex flex-col items-center justify-start transition duration-300 hover:shadow-[0_0_20px_rgba(140,161,255,0.4)] hover:border-[#8CA1FF] group">
-                    <img src="assets/icons/diversity and inclusion.png" alt="Diversity & Inclusion"
-                        class="mb-4 w-14 transition-transform duration-500 group-hover:rotate-[360deg]" />
-                    <h3 class="text-xl font-semibold mb-2">Diversity & Inclusion</h3>
-                    <p class="text-sm sm:text-[15px] text-gray-300 leading-relaxed">
-                        We celebrate diverse voices and global cultures. Our platform gives space to stories that
-                        challenge norms and inspire.
-                    </p>
+                    <!-- Diversity & Inclusion -->
+                    <div
+                        class="bg-[#111827]/80 rounded-2xl p-6 text-center border border-white/10 transition duration-300 hover:border-blue-500 hover:shadow-[0_0_25px_#3b82f6] group">
+                        <img src="assets/icons/diversity and inclusion.png"
+                            class="mx-auto w-16 mb-4 transition-transform duration-700 group-hover:rotate-[360deg]"
+                            alt="Diversity & Inclusion" />
+                        <h3 class="text-xl font-bold mb-2">Diversity & Inclusion</h3>
+                        <p class="text-gray-300 text-base leading-relaxed">
+                            We celebrate diverse voices and global cultures. Our platform gives space to stories that
+                            challenge norms and inspire.
+                        </p>
+                    </div>
                 </div>
-
-                <div
-                    class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white min-h-[260px] flex flex-col items-center justify-start transition duration-300 hover:shadow-[0_0_20px_rgba(140,161,255,0.4)] hover:border-[#8CA1FF] group">
-                    <img src="assets/icons/Integrity.png" alt="Integrity"
-                        class="mb-4 w-14 transition-transform duration-500 group-hover:rotate-[360deg]" />
-                    <h3 class="text-xl font-semibold mb-2">Integrity</h3>
-                    <p class="text-sm sm:text-[15px] text-gray-300 leading-relaxed">
-                        We value transparency, trust, and professionalism in every partnership. Artists are empowered to
-                        express themselves authentically and freely.
-                    </p>
-                </div>
-
-                <div
-                    class="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center text-white min-h-[260px] flex flex-col items-center justify-start transition duration-300 hover:shadow-[0_0_20px_rgba(140,161,255,0.4)] hover:border-[#8CA1FF] group sm:col-span-2">
-                    <img src="assets/icons/collaboration.png" alt="Collaboration"
-                        class="mb-4 w-14 transition-transform duration-500 group-hover:rotate-[360deg]" />
-                    <h3 class="text-xl font-semibold mb-2">Collaboration</h3>
-                    <p class="text-sm sm:text-[15px] text-gray-300 leading-relaxed">
-                        We believe success is built together. Through global partnerships, we drive shared growth and
-                        make the world feel more connected.
-                    </p>
-                </div>
-
             </div>
         </div>
     </section>
+    <section class="py-12 px-4 overflow-hidden relative bg-cover bg-center bg-no-repeat"
+        style="background-image: url('assets/images/why-we-offer.png');">
 
-    <section class="bg-[#050B18] py-12 px-4 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-left text-white text-3xl sm:text-4xl font-bold mb-2">
+        <div class="max-w-7xl mx-auto text-white">
+            <h2 class="text-left text-3xl sm:text-4xl font-bold mb-2">
                 What <br><span class="text-[#A0AFC0]">We Offer</span>
             </h2>
             <p class="text-left text-[#A0AFC0] mb-10 text-lg sm:text-2xl">
@@ -315,8 +342,9 @@
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Individual Offer Cards -->
                 <div
-                    class="group h-full p-5 rounded-[70px_0_70px_0] border border-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center bg-transparent">
+                    class="group h-full p-5 rounded-[70px_0_70px_0] border border-[#00BFFF] bg-[#050B18]/80 transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center">
                     <img src="assets/icons/artist management.png" alt="Artist Management"
                         class="w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110" />
                     <h3 class="text-white font-bold text-lg sm:text-xl mb-2">Artist Management</h3>
@@ -326,7 +354,7 @@
                 </div>
 
                 <div
-                    class="group h-full p-5 rounded-[70px_0_70px_0] border border-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center bg-transparent">
+                    class="group h-full p-5 rounded-[70px_0_70px_0] border border-[#00BFFF] bg-[#050B18]/80 transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center">
                     <img src="assets/icons/talent booking.png" alt="Talent Booking"
                         class="w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110" />
                     <h3 class="text-white font-bold text-lg sm:text-xl mb-2">Talent Booking</h3>
@@ -336,7 +364,7 @@
                 </div>
 
                 <div
-                    class="group h-full p-5 rounded-[70px_0_70px_0] border border-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center bg-transparent">
+                    class="group h-full p-5 rounded-[70px_0_70px_0] border border-[#00BFFF] bg-[#050B18]/80 transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center">
                     <img src="assets/icons/event production.png" alt="Event Production"
                         class="w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110" />
                     <h3 class="text-white font-bold text-lg sm:text-xl mb-2">Event Production</h3>
@@ -346,7 +374,7 @@
                 </div>
 
                 <div
-                    class="group h-full p-5 rounded-[70px_0_70px_0] border border-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center bg-transparent">
+                    class="group h-full p-5 rounded-[70px_0_70px_0] border border-[#00BFFF] bg-[#050B18]/80 transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center">
                     <img src="assets/icons/brand partnership.png" alt="Brand Partnership"
                         class="w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110" />
                     <h3 class="text-white font-bold text-lg sm:text-xl mb-2">Brand Partnership</h3>
@@ -356,7 +384,7 @@
                 </div>
 
                 <div
-                    class="group h-full p-5 rounded-[70px_0_70px_0] border border-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center bg-transparent">
+                    class="group h-full p-5 rounded-[70px_0_70px_0] border border-[#00BFFF] bg-[#050B18]/80 transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center">
                     <img src="assets/icons/media and pr.png" alt="Media & PR"
                         class="w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110" />
                     <h3 class="text-white font-bold text-lg sm:text-xl mb-2">Media & PR</h3>
@@ -366,7 +394,7 @@
                 </div>
 
                 <div
-                    class="group h-full p-5 rounded-[70px_0_70px_0] border border-[#00BFFF] transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center bg-transparent">
+                    class="group h-full p-5 rounded-[70px_0_70px_0] border border-[#00BFFF] bg-[#050B18]/80 transition-all duration-300 hover:shadow-[0_0_15px_#00BFFF] hover:scale-105 flex flex-col items-center text-center">
                     <img src="assets/icons/production set.png" alt="Production Setup"
                         class="w-14 h-14 mb-4 transition-transform duration-300 group-hover:scale-110" />
                     <h3 class="text-white font-bold text-lg sm:text-xl mb-2">Production Setup</h3>
@@ -377,80 +405,116 @@
             </div>
         </div>
     </section>
-    <section class="bg-[#050B18] py-24 px-6 sm:px-10 overflow-hidden">
-        <div class="max-w-7xl mx-auto relative">
-            <!-- Heading -->
-            <div class="text-center max-w-2xl mx-auto mb-20 animate-fade-in-up">
-                <h2 class="text-4xl md:text-5xl font-semibold text-white mb-6 leading-snug transition-all duration-700">
+
+    <section class="py-12 px-4 overflow-hidden relative bg-cover bg-center bg-no-repeat"
+        style="background-image: url('assets/images/why-we-offer.png');">
+
+        <!-- Right: Flower (No Rotation of Content) -->
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 items-center gap-16">
+            <!-- Left: Heading -->
+            <div class="text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
+                <h2 class="text-4xl md:text-5xl font-semibold text-white mb-6 leading-snug">
                     Why Choose <br><span class="text-[#8CA1FF]">ClosedLoop</span>?
                 </h2>
                 <p class="text-white/70 leading-relaxed text-2xl">
-                    Where passion meets precision—bringing entertainment visions to life with style, skill, and soul.
+                    Where passion meets precision—bringing entertainment visions to life with style, skill, and
+                    soul.
                 </p>
             </div>
 
-            <!-- Rotating Content Flower -->
-            <div id="flowerWrapper"
-                class="hidden lg:flex items-center justify-center relative h-[850px] group hover:pause-rotation">
-                <div class="relative w-[780px] h-[780px]">
+            <!-- Right: Flower (Resized) -->
+            <div class="relative w-[630px] h-[630px] hidden lg:flex items-center justify-center">
+                <!-- Glow center -->
+                <div
+                    class="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#8CA1FF]/20 blur-3xl rounded-full z-0">
+                </div>
 
-                    <!-- Center glow -->
+                <!-- Top -->
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-[320px]">
+                    <img src="assets/images/clover (1) (1).png" class="w-full h-full object-contain drop-shadow-lg" />
                     <div
-                        class="absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-[#8CA1FF]/20 blur-3xl rounded-full z-0">
+                        class="absolute inset-0 flex flex-col items-center justify-center text-center max-w-[200px] mx-auto">
+                        <img src="assets/icons/16.png" class="w-12 h-12 mb-3" />
+                        <h3 class="text-white text-lg font-semibold mb-2">Elite Talent Networks</h3>
+                        <p class="text-white/80 text-sm leading-snug">
+                            Carefully selected performers—vetted for originality, professionalism,<br> and <br>
+                            event-readiness.
+                        </p>
                     </div>
+                </div>
 
-                    <!-- Petal layout (static) -->
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[360px] h-[360px]">
-                        <img src="assets/images/clover (1) (1).png" class="w-full h-full object-contain drop-shadow-lg"
-                            alt="Top" />
-                        <div class="absolute inset-0 flex items-center justify-center text-center petal-content"
-                            data-index="0"></div>
+                <!-- Bottom -->
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[320px] h-[320px]">
+                    <img src="assets/images/clover (1) (1).png"
+                        class="w-full h-full object-contain rotate-180 drop-shadow-lg" />
+                    <div
+                        class="absolute inset-0 flex flex-col items-center justify-center text-center max-w-[200px] mx-auto">
+                        <img src="assets/icons/endtoend services.png" class="w-12 h-12 mb-3" />
+                        <h3 class="text-white text-lg font-semibold mb-2">End-to-End Services</h3>
+                        <p class="text-white/80 text-sm leading-snug">
+                            Artist sourcing, stage production, branding & logistics—handled through one integrated
+                            approach.
+                        </p>
                     </div>
-                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[360px] h-[360px]">
-                        <img src="assets/images/clover (1) (1).png"
-                            class="w-full h-full object-contain rotate-180 drop-shadow-lg" alt="Bottom" />
-                        <div class="absolute inset-0 flex items-center justify-center text-center petal-content"
-                            data-index="1"></div>
-                    </div>
-                    <div class="absolute top-1/2 left-0 -translate-y-1/2 w-[360px] h-[360px]">
-                        <img src="assets/images/clover (1) (1).png"
-                            class="w-full h-full object-contain -rotate-90 drop-shadow-lg" alt="Left" />
-                        <div class="absolute inset-0 flex items-center justify-center text-center petal-content"
-                            data-index="2"></div>
-                    </div>
-                    <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[360px] h-[360px]">
-                        <img src="assets/images/clover (1) (1).png"
-                            class="w-full h-full object-contain rotate-90 drop-shadow-lg" alt="Right" />
-                        <div class="absolute inset-0 flex items-center justify-center text-center petal-content"
-                            data-index="3"></div>
-                    </div>
+                </div>
 
+                <!-- Left -->
+                <div class="absolute top-1/2 left-0 -translate-y-1/2 w-[320px] h-[320px]">
+                    <img src="assets/images/clover (1) (1).png"
+                        class="w-full h-full object-contain -rotate-90 drop-shadow-lg" />
+                    <div
+                        class="absolute inset-0 flex flex-col items-center justify-center text-center max-w-[200px] mx-auto">
+                        <img src="assets/icons/a passionate team.png" class="w-12 h-12 mb-3" />
+                        <h3 class="text-white text-lg font-semibold mb-2">Creative Passion</h3>
+                        <p class="text-white/80 text-sm leading-snug">
+                            Personalized experiences delivered with impact and soul—fully aligned <br>to your vision.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right -->
+                <div class="absolute top-1/2 right-0 -translate-y-1/2 w-[320px] h-[320px]">
+                    <img src="assets/images/clover (1) (1).png"
+                        class="w-full h-full object-contain rotate-90 drop-shadow-lg" />
+                    <div
+                        class="absolute inset-0 flex flex-col items-center justify-center text-center max-w-[200px] mx-auto">
+                        <img src="assets/icons/diverse events.png" class="w-12 h-12 mb-3" />
+                        <h3 class="text-white text-lg font-semibold mb-2">Diverse Expertise</h3>
+                        <p class="text-white/80 text-sm leading-snug">
+                            From launches to weddings, our hands-on planning ensures flawless execution.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
+
+
+
+    <!-- Script -->
     <script>
         const petalContents = [
             {
                 icon: "assets/icons/16.png",
                 title: "Elite Talent Networks",
-                text: "Carefully selected performers—vetted for originality, professionalism, and event-readiness.",
+                text: "Carefully selected performers—vetted for originality, professionalism, and event-readiness."
             },
             {
                 icon: "assets/icons/endtoend services.png",
                 title: "End-to-End Services",
-                text: "Artist sourcing, stage production, branding & logistics—handled through one integrated approach.",
+                text: "Artist sourcing, stage production, branding & logistics—handled through one integrated approach."
             },
             {
                 icon: "assets/icons/a passionate team.png",
                 title: "Creative Passion",
-                text: "Personalized experiences delivered with impact and soul—fully aligned to your vision.",
+                text: "Personalized experiences delivered with impact and soul—fully aligned to your vision."
             },
             {
                 icon: "assets/icons/diverse events.png",
                 title: "Diverse Expertise",
-                text: "From launches to weddings, our hands-on planning ensures flawless execution.",
-            },
+                text: "From launches to weddings, our hands-on planning ensures flawless execution."
+            }
         ];
 
         const petals = document.querySelectorAll(".petal-content");
@@ -458,14 +522,22 @@
         let interval;
 
         function updatePetals() {
+            const rotations = [0, 180, -90, 90];
+
             petals.forEach((el, idx) => {
                 const contentIndex = (idx + currentOffset) % petalContents.length;
                 const content = petalContents[contentIndex];
+
+                // Clear previous
+                el.innerHTML = "";
+
                 el.innerHTML = `
-        <div class="flex flex-col items-center px-4 max-w-[190px] transition-all duration-500">
-          <img src="${content.icon}" class="w-10 h-10 mb-2" alt="${content.title}" />
-          <h3 class="text-white text-md font-semibold mb-1">${content.title}</h3>
-          <p class="text-white/70 text-sm leading-tight">${content.text}</p>
+        <div class="w-full h-full flex flex-col items-center justify-center px-4">
+          <div class="transform rotate-[${rotations[idx]}deg] flex flex-col items-center text-center max-w-[200px]">
+            <img src="${content.icon}" class="w-12 h-12 mb-3" alt="${content.title}" />
+            <h3 class="text-white text-lg font-semibold leading-tight mb-2">${content.title}</h3>
+            <p class="text-white/80 text-sm leading-snug">${content.text}</p>
+          </div>
         </div>
       `;
             });
@@ -475,7 +547,7 @@
             interval = setInterval(() => {
                 currentOffset = (currentOffset + 1) % petalContents.length;
                 updatePetals();
-            }, 3000);
+            }, 3500);
         }
 
         function stopRotation() {
@@ -486,10 +558,9 @@
         wrapper.addEventListener("mouseenter", stopRotation);
         wrapper.addEventListener("mouseleave", startRotation);
 
-        updatePetals(); // initial load
-        startRotation(); // begin loop
+        updatePetals();
+        startRotation();
     </script>
-
 
     <!-- Mobile Version (unchanged but cleaned spacing slightly) -->
     <div class="lg:hidden flex flex-col items-center gap-14 relative mt-10">
