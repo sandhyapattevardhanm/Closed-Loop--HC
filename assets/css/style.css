@@ -79,7 +79,7 @@
         width: 2.5px;
         height: 48%;
         background: white;
-        transform: rotate(30deg);
+        transform: rotate(29deg);
         transform-origin: top left;
         z-index: 2;
         display: block;
@@ -93,7 +93,7 @@
         width: 2.5px;
         height: 48%;
         background: white;
-        transform: rotate(30deg);
+        transform: rotate(29deg);
         transform-origin: bottom right;
         z-index: 2;
         display: block;
