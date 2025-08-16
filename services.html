@@ -90,7 +90,7 @@
         </div>
 
         <!-- Right Side -->
-        <div class="w-full lg:w-1/2 flex items-center justify-center p-5">
+        <div class="hidden md:flex w-full lg:w-1/2 items-center justify-center p-5">
             <img src="assets/images/wow.png" alt="Infinity" class="w-full max-w-lg opacity-90" />
         </div>
     </section>
@@ -185,11 +185,18 @@
         }
 
         .image-stack-section img {
-            width: 75%;
+            width: 90%;   /* Larger image size on small screens */
             height: auto;
             border-radius: 10px;
         }
+
+        @media (min-width: 768px) {
+            .image-stack-section img {
+                width: 75%;   /* Default size for medium and up */
+            }
+        }
     </style>
+
 
 
     <!-- Footer -->
